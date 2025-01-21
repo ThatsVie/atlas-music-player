@@ -6,7 +6,7 @@ export default function Footer() {
         href='https://github.com/ThatsVie/atlas-music-player'
         className='text-darkMagenta font-bold dark:text-lightTeal hover:underline focus:outline-none focus:ring-2 focus:ring-teal dark:focus:ring-lightTeal px-2'
       >
-        GitHub
+        GitHub Repo
       </a>
     </footer>
   );
