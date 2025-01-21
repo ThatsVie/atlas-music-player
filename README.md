@@ -22,6 +22,7 @@
    - [Task 6: Dark Mode](#task-6-dark-mode)
    - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
 - [Typescript Introduction Tasks](#typescript-introduction-tasks)
+   - [Task 0: Getting Started](#task-0-getting-started)
 
 ---
 
@@ -528,3 +529,42 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 ## Typescript Introduction Tasks
+
+
+### Task 0: Getting Started
+
+#### **Learning Objective**
+
+- Understand the continuation of the project and its transition from styling to functionality using **TypeScript**.
+- Learn how to manage state and integrate API data in a React application.
+
+---
+
+#### **What I Did**
+
+1. **Continued Work in Existing Repository:**
+   - Used the `atlas-music-player` repository created during the "React Styling" project.
+
+2. **Shifted Focus:**
+   - Transitioned from building a static version of the music player to implementing its functionality.
+   - Began planning state management for:
+     - Playback status (e.g., playing or paused).
+     - Playback speed.
+     - Currently playing song.
+     - Shuffle functionality.
+     - Playlist management.
+
+3. **Explored the API:**
+   - Reviewed the provided [API Documentation](http://localhost:5173/swagger.html) to understand endpoints for fetching playlist and song data.
+   - Ensured the localhost server was running to access the Swagger documentation.
+
+4. **Prepared for TypeScript Integration:**
+   - Identified areas where TypeScript types will improve code safety, such as for API responses and component props.
+
+---
+
+#### **Result**
+
+- The foundation for implementing state management and API integration is set.
+- A clear understanding of the project's objectives and API capabilities was achieved.
+
