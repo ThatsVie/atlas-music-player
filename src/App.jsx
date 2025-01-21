@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 import MusicPlayer from './components/MusicPlayer';
+import LoadingSkeleton from './components/LoadingSkeleton';
 import Footer from './components/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(
     () => window.matchMedia('(prefers-color-scheme: dark)').matches
   );
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -19,6 +22,14 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+
+  useEffect(() => {
+    // Simulate data fetching
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className='bg-brightYellow dark:bg-black min-h-screen flex flex-col transition-colors duration-300'>
@@ -35,7 +46,7 @@ function App() {
       </button>
 
       <div className='flex-grow flex items-center justify-center p-4'>
-        <MusicPlayer />
+        {isLoading ? <LoadingSkeleton /> : <MusicPlayer />}
       </div>
 
       <Footer />

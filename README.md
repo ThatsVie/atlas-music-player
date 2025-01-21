@@ -19,6 +19,7 @@
 - [Task 4: Music Player](#task-4-music-player)
 - [Task 5: Custom Theme](#task-5-custom-theme)
 - [Task 6: Dark Mode](#task-6-dark-mode)
+- [Task 7: Loading Skeleton](#task-7-loading-skeleton)
 
 ---
 
@@ -429,5 +430,51 @@ Use the components from the previous task to build larger, composite components 
    - Verify that the `dark` class is being added/removed from the `html` element.
 3. **Styles Not Updating:**
    - Ensure all components use `dark:` variants for Tailwind classes where applicable.
+
+---
+
+## Task 7: Loading Skeleton
+
+### **Learning Objective**
+
+- Implement a skeleton loader to improve user experience during content loading.
+
+---
+
+### **Resources**
+
+- **[Tailwind CSS Skeletons](https://tailwindcss.com/docs/animation#pulse):** Official guide for creating skeleton loaders with `animate-pulse`.
+- **[Skeleton Loading Patterns](https://css-tricks.com/building-skeleton-screens-css-custom-properties/):** Article on best practices for skeleton loaders.
+- **[Flowbite Skeleton Components](https://flowbite.com/docs/components/skeleton/):** Tailwind-based skeleton component examples for UI inspiration.
+
+---
+
+### **What I Did**
+
+1. **Created the Skeleton Component:**
+
+   - **File Created:** `src/components/LoadingSkeleton.jsx`
+   - Designed the skeleton to match the layout of the `CurrentlyPlaying` and `Playlist` components.
+   - Included placeholders for:
+     - Cover art, song title, and artist in the `CurrentlyPlaying` section.
+     - Playback controls with proportional placeholders for buttons and sliders.
+     - Playlist items with placeholders for song title, artist, and duration.
+
+2. **Integrated the Skeleton in App:**
+
+   - Updated `App.jsx` to conditionally render the `LoadingSkeleton` or the `MusicPlayer` component based on the loading state.
+   - Simulated loading state with a 3-second timeout for demonstration purposes.
+
+3. **Styled with Tailwind CSS:**
+   - Used `animate-pulse` for shimmering effects.
+   - Ensured proper spacing, alignment, and proportions to mimic the actual components.
+
+---
+
+### **Result**
+
+- **Skeleton Loader:**
+  - Displays a visually accurate placeholder for the `MusicPlayer` while the data is loading.
+  - Ensures seamless transition from loading to fully rendered content.
 
 ---
