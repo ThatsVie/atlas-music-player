@@ -13,7 +13,7 @@
   - [Tools I Used](#tools-i-used)
 - [Learning Objectives](#learning-objectives)
 - [React Styling Tasks](#react-styling-tasks)
-   - [Task 0: Getting Started](#task-0-getting-started)
+   - [React Styling: Task 0: Getting Started](#react-styling-task-0-getting-started)
    - [Task 1: Setup Tailwind](#task-1-setup-tailwind)
    - [Task 2: Basic Components](#task-2-basic-components)
    - [Task 3: Larger Component](#task-3-larger-components)
@@ -22,7 +22,7 @@
    - [Task 6: Dark Mode](#task-6-dark-mode)
    - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
 - [Typescript Introduction Tasks](#typescript-introduction-tasks)
-   - [Task 0: Getting Started](#task-0-getting-started)
+   - [Typescript: Task 0: Getting Started](#typescript-task-0-getting-started)
 
 ---
 
@@ -105,7 +105,7 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
 
 ## React Styling Tasks
 
-### Task 0: Getting Started
+### React Styling: Task 0: Getting Started
 
 To begin this project, I completed the following steps:
 
@@ -530,8 +530,7 @@ Use the components from the previous task to build larger, composite components 
 
 ## Typescript Introduction Tasks
 
-
-### Task 0: Getting Started
+### Typescript: Task 0: Getting Started
 
 #### **Learning Objective**
 
