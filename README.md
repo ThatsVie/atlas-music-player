@@ -5,6 +5,7 @@
 </div>
 
 ## Table of Contents
+
 - [Project Overview](#project-overview)
 - [Resources](#resources)
   - [What I Watched](#what-i-watched)
@@ -17,6 +18,7 @@
 - [Task 3: Larger Component](#task-3-larger-components)
 - [Task 4: Music Player](#task-4-music-player)
 - [Task 5: Custom Theme](#task-5-custom-theme)
+- [Task 6: Dark Mode](#task-6-dark-mode)
 
 ---
 
@@ -60,15 +62,18 @@ To begin this project, I completed the following steps:
 ### **What I Did**
 
 1. **Cloned the Repository:**
+
    - Used the "Use this template" button to clone the [starter code](https://github.com/atlas-jswank/atlas-music-player) to my own repository.
 
 2. **Installed Dependencies:**
+
    - Navigated to the project directory and ran:
      ```bash
      npm install
      ```
 
 3. **Started the Development Server:**
+
    - Launched the dev server using:
      ```bash
      npm run dev
@@ -97,6 +102,7 @@ Learn how to set up Tailwind CSS in a React project.
 ### **What I Did**
 
 1. **Installed Tailwind CSS:**
+
    - Ran the following commands to install Tailwind and its peer dependencies:
      ```bash
      npm install -D tailwindcss postcss autoprefixer
@@ -104,14 +110,12 @@ Learn how to set up Tailwind CSS in a React project.
      ```
 
 2. **Configured Tailwind:**
+
    - Updated `tailwind.config.js` to include paths to all template files:
      ```javascript
      /** @type {import('tailwindcss').Config} */
      export default {
-       content: [
-         "./index.html",
-         "./src/**/*.{js,ts,jsx,tsx}",
-       ],
+       content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
        theme: {
          extend: {},
        },
@@ -120,6 +124,7 @@ Learn how to set up Tailwind CSS in a React project.
      ```
 
 3. **Added Tailwind Directives:**
+
    - Edited `src/index.css` to include the required Tailwind directives:
      ```css
      @tailwind base;
@@ -138,6 +143,7 @@ Learn how to set up Tailwind CSS in a React project.
 Tailwind CSS is successfully set up in the project. The configuration includes paths to template files, and Tailwind directives are added to the CSS file. No custom styles have been added yet; these will be implemented in upcoming tasks.
 
 ---
+
 ## Task 2: Basic Components
 
 ### **Learning Objective**
@@ -153,6 +159,7 @@ Learn how to style basic components using Tailwind CSS.
 ### **What I Did**
 
 1. **Installed Dependencies:**
+
    - Installed `prop-types` and `lucide-react`:
      ```bash
      npm install prop-types
@@ -162,6 +169,7 @@ Learn how to style basic components using Tailwind CSS.
      - **Why `lucide-react`:** The curriculum specifies using Lucide for icons (e.g., Play, Shuffle, Rewind). While I considered extracting SVGs from the Figma design, using Lucide ensures compliance with the task requirements.
 
 2. **Implemented Static Components:**
+
    - Built the following components using Tailwind CSS utility classes:
      - `CoverArt`: Displays the cover art image.
      - `SongTitle`: Shows the song title and artist name.
@@ -170,9 +178,11 @@ Learn how to style basic components using Tailwind CSS.
      - `PlayListItem`: Displays a song's title, artist, and duration with hover effects.
 
 3. **Used Tailwind for Styling:**
+
    - Styled all components with Tailwind's utility classes, avoiding plain CSS or inline styles as per the curriculum's requirements.
 
 4. **Set Up Layout for Testing:**
+
    - Combined the components in `App.jsx` to create a basic layout. This allowed me to visually verify the components and troubleshoot issues.
 
 5. **Troubleshooting Styling and Layout:**
@@ -188,7 +198,6 @@ The static components are rendered and styled as per the requirements. The layou
 
 ---
 
-
 ## Task 3: Larger Components
 
 ### **Learning Objective**
@@ -202,7 +211,7 @@ Use the components from the previous task to build larger, composite components 
 - **[Figma Design](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f):** Component layout and styling reference.
 - **[Tailwind CSS Documentation](https://tailwindcss.com/docs):** Official guide for utility classes.
 
----  
+---
 
 ### **What I Did**
 
@@ -214,15 +223,14 @@ Use the components from the previous task to build larger, composite components 
      - **PlayControls**
      - **VolumeControls**
    - **Styling:** Used Tailwind utility classes to structure and style the component. Focused on creating a vertically aligned layout that matches the Figma design.
-
-   
 2. **Created `Playlist` Component:**
+
    - **File Name:** `src/components/Playlist.jsx`
    - **Description:** A composite component that combines a list of `PlayListItem` components and displays the playlist title.
    - **Styling:** Used Tailwind utility classes to create a vertically stacked layout for the playlist. Added hover effects and spacing between items as per the Figma design.
 
-  
 3. **Integration:**
+
    - These two larger components will be integrated into a higher-level layout in a future task.
    - For now, the focus was on implementing and styling them individually.
 
@@ -243,12 +251,14 @@ Use the components from the previous task to build larger, composite components 
 ## Task 4: Music Player
 
 ### Learning Objective
+
 - Build a fully responsive music player component by combining previously created components.
 - Implement a layout that adapts to different screen sizes using Tailwind utility classes.
 
 ---
 
 ### Resources
+
 - **[Flexbox Layouts](https://atlas-jswank.github.io/blog/tailwind/#flexbox-layouts):** A guide to building flexible layouts with Tailwind CSS.
 - **[Responsive Layouts](https://atlas-jswank.github.io/blog/tailwind/#responsive-layouts):** Tips on creating layouts that adapt to various screen sizes.
 
@@ -257,14 +267,15 @@ Use the components from the previous task to build larger, composite components 
 ### What I Did
 
 1. **Created the MusicPlayer Component:**
+
    - File Name: `src/components/MusicPlayer.jsx`
    - Combined the `CurrentlyPlaying` and `Playlist` components into a single `MusicPlayer` component.
    - Implemented a responsive layout:
      - **Medium and Larger Screens:** `CurrentlyPlaying` and `Playlist` are displayed side by side using `md:flex-row`.
      - **Small Screens:** The layout stacks the components vertically using `flex-col`.
 
-
 2. **Updated the App Component:**
+
    - Modified `src/App.jsx` to include the `MusicPlayer` component and the `Footer`.
    - Structured the layout using `flex-grow` for the main content and placed the footer at the bottom.
 
@@ -275,6 +286,7 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 ### Result
+
 - The `MusicPlayer` component integrates the `CurrentlyPlaying` and `Playlist` components into a responsive layout.
 - The app layout is enhanced with the addition of the `Footer`.
 - The design follows the Figma specifications, ensuring consistency across different screen sizes.
@@ -284,11 +296,13 @@ Use the components from the previous task to build larger, composite components 
 ## Task 5: Custom Theme
 
 ### **Learning Objective**
+
 - Learn to customize the color scheme in Tailwind.
 
 ---
 
 ### **Resources**
+
 - **[Using Custom Colors](https://tailwindcss.com/docs/customizing-colors#adding-additional-colors):** Guide to adding custom colors in Tailwind.
 - **[Tailwind CSS Color Generator](https://uicolors.app/create):** Tool to generate vibrant color palettes.
 - **[Theme Configuration](https://tailwindcss.com/docs/theme):** Documentation on customizing the Tailwind theme.
@@ -298,15 +312,17 @@ Use the components from the previous task to build larger, composite components 
 ### **What I Did**
 
 1. **Added Custom Colors:**
+
    - **File Modified:** `tailwind.config.js`
    - Added a bold retro-inspired palette.
 
-
 2. **Applied Custom Colors:**
+
    - Styled `CurrentlyPlaying` and `Playlist` components with custom backgrounds, borders, and text colors.
    - Used custom colors in the `PlayControls` and `VolumeControls` components for hover and focus states.
 
 3. **Ensured Accessibility:**
+
    - Checked contrast ratios to meet accessibility standards.
    - Verified interactive elements (buttons and links) have clear hover and focus styles.
    - Added `aria-labels` for better screen reader support.
@@ -318,6 +334,7 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 ### **Result**
+
 - A bold retro-inspired theme with custom colors applied across all components.
 - Improved alignment and spacing between `CurrentlyPlaying` and `Playlist`.
 - Ensured accessibility with sufficient contrast and descriptive labels for interactive elements.
@@ -325,15 +342,92 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 ### **Troubleshooting**
+
 1. **Alignment Issues:**
+
    - Adjust spacing using Tailwind utilities (`space-y-`, `px-`, `py-`, etc.).
    - Apply `items-center` or `justify-center` to align content vertically or horizontally.
 
 2. **Low Contrast:**
+
    - Test colors with a [Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
 3. **Spacing or Layout Problems:**
    - Use Tailwind's `flex`, `gap`, and `space-` utilities to create consistent layouts.
    - Add `min-h` or `min-w` values if elements are disproportionate.
+
+---
+
+## Task 6: Dark Mode
+
+### **Learning Objective**
+
+- Implement a dark mode that honors the user's operating system preferences and allows manual toggling between light and dark modes.
+
+---
+
+### **Resources**
+
+- **[Dark Mode Documentation](https://tailwindcss.com/docs/dark-mode):** Official Tailwind CSS guide for enabling dark mode.
+- **[Tailwind Config Reference](https://tailwindcss.com/docs/theme):** Documentation on customizing themes.
+- **[Contrast Checker](https://webaim.org/resources/contrastchecker/):** Tool to verify sufficient contrast between colors.
+
+---
+
+### **What I Did**
+
+1. **Enabled Dark Mode in Tailwind Configuration:**
+
+   - Updated `tailwind.config.js` to enable `darkMode` with the `class` strategy.
+   - Example:
+     ```js
+     darkMode: 'class',
+     ```
+
+2. **Configured Colors:**
+
+   - Added custom colors in `tailwind.config.js` to enhance contrast for light and dark modes.
+
+3. **Added a Dark Mode Toggle:**
+
+   - Implemented a button to toggle between light and dark modes manually.
+   - Button includes:
+     - Icons for light mode (`Sun`) and dark mode (`Moon`).
+     - Accessibility label (`aria-label`) for assistive technologies.
+
+4. **Updated Components for Dark Mode:**
+
+   - Updated background and text colors for light and dark modes.
+
+5. **Challenges and Fixes:**
+   - **Contrast Issues:**
+     - Used a contrast checker to ensure readability.
+     - Updated text and background colors to meet accessibility standards.
+   - **Hover Effects:**
+     - Ensured hover states in both light and dark modes are distinguishable.
+
+---
+
+### **Result**
+
+- **Dark Mode:**
+  - Backgrounds are darker (e.g., `darkerTeal`, `darkMagenta`) for improved readability.
+  - Text colors are light and provide sufficient contrast against dark backgrounds.
+- **Light Mode:**
+  - Backgrounds and text use vibrant colors for a retro 90s look.
+  - Updated hover effects for better accessibility.
+
+---
+
+### **Troubleshooting**
+
+1. **Low Contrast:**
+   - Use the [Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify color accessibility.
+   - Adjust colors in `tailwind.config.js` as needed.
+2. **Dark Mode Not Switching:**
+   - Ensure `darkMode: 'class'` is set in `tailwind.config.js`.
+   - Verify that the `dark` class is being added/removed from the `html` element.
+3. **Styles Not Updating:**
+   - Ensure all components use `dark:` variants for Tailwind classes where applicable.
 
 ---

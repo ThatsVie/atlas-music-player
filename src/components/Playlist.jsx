@@ -12,13 +12,19 @@ const Playlist = () => {
     { title: 'Electric Fever', artist: 'Neon Jungle', duration: '8:41' },
     { title: 'Edge of the Abyss', artist: 'Steel Horizon', duration: '2:27' },
     { title: 'Golden Haze', artist: 'Velvet Waves', duration: '3:15' },
-    { title: 'Shatter the Silence', artist: 'Thunderclap Echo', duration: '8:22' },
+    {
+      title: 'Shatter the Silence',
+      artist: 'Thunderclap Echo',
+      duration: '8:22',
+    },
   ];
 
   return (
-    <div className="p-6 bg-lightTeal rounded-lg shadow-lg border-4 border-brightPink h-full flex flex-col justify-between">
-      <h2 className="text-lg font-bold text-darkMagenta mb-4">Playlist</h2>
-      <div className="space-y-3">
+    <div className='p-6 bg-lightTeal dark:bg-darkerTeal rounded-lg shadow-lg border-4 border-brightPink dark:border-lightTeal h-full flex flex-col justify-between transition-colors'>
+      <h2 className='text-lg font-bold text-darkMagenta dark:text-lightTeal mb-4'>
+        Playlist
+      </h2>
+      <div className='space-y-3'>
         {songs.map((song, index) => (
           <PlayListItem
             key={index}

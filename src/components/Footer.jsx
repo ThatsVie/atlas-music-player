@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="text-center p-6 bg-darkMagenta text-lightTeal font-semibold">
-      &copy; {new Date().getFullYear()} Atlas School -{" "}
+    <footer className='text-center p-6 bg-lightTeal dark:bg-darkMagenta text-black dark:text-white font-semibold'>
+      &copy; {new Date().getFullYear()} Atlas School -
       <a
-        href="https://github.com/ThatsVie/atlas-music-player"
-        className="text-brightYellow underline font-bold hover:text-lightTeal focus:outline-none focus:ring-2 focus:ring-citrusOrange px-2"
+        href='https://github.com/ThatsVie/atlas-music-player'
+        className='text-darkMagenta font-bold dark:text-lightTeal hover:underline focus:outline-none focus:ring-2 focus:ring-teal dark:focus:ring-lightTeal px-2'
       >
         GitHub
       </a>

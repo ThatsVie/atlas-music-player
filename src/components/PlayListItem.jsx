@@ -5,27 +5,38 @@ const PlayListItem = ({ title, artist, duration, isCurrent }) => {
   return (
     <div
       className={`flex justify-between items-center p-3 rounded-md ${
-        isCurrent ? 'bg-teal' : 'hover:bg-brightYellow'
+        isCurrent
+          ? 'bg-teal dark:bg-lightTeal text-white dark:text-darkMagenta'
+          : 'hover:bg-brightYellow dark:hover:bg-darkMagenta transition-colors'
       }`}
     >
       <div>
         <p
           className={`text-sm font-bold ${
-            isCurrent ? 'text-white' : 'text-darkMagenta'
+            isCurrent
+              ? 'text-white dark:text-darkMagenta'
+              : 'text-darkMagenta dark:text-white'
           }`}
         >
           {title}
         </p>
         <p
           className={`text-xs ${
-            isCurrent ? 'text-citrusOrange' : 'text-gray-900'
+            isCurrent
+              ? 'text-gray-300 dark:text-darkerTeal'
+              : 'text-gray-700 dark:text-lightTeal'
           }`}
         >
           {artist}
         </p>
       </div>
-
-      <p className={`text-xs ${isCurrent ? 'text-citrusOrange' : 'text-gray-900'}`}>
+      <p
+        className={`text-xs ${
+          isCurrent
+            ? 'text-gray-300 dark:text-darkerTeal'
+            : 'text-gray-700 dark:text-lightTeal'
+        }`}
+      >
         {duration}
       </p>
     </div>

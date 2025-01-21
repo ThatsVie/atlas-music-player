@@ -6,7 +6,7 @@ import VolumeControls from './VolumeControls';
 
 const CurrentlyPlaying = () => {
   return (
-    <div className="p-6 bg-brightYellow rounded-lg shadow-lg border-4 border-magenta">
+    <div className='p-6 bg-brightYellow dark:bg-darkerTeal rounded-lg shadow-lg border-4 border-magenta transition-colors duration-300'>
       <CoverArt />
       <SongTitle />
       <PlayControls />
