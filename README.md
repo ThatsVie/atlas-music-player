@@ -1,6 +1,6 @@
 <div align="center">
 
-# Atlas Music Player
+# Atlas Music Player: React Styling And Typescript Introduction
 
 </div>
 
@@ -12,55 +12,103 @@
   - [What I Read](#what-i-read)
   - [Tools I Used](#tools-i-used)
 - [Learning Objectives](#learning-objectives)
-- [Task 0: Getting Started](#task-0-getting-started)
-- [Task 1: Setup Tailwind](#task-1-setup-tailwind)
-- [Task 2: Basic Components](#task-2-basic-components)
-- [Task 3: Larger Component](#task-3-larger-components)
-- [Task 4: Music Player](#task-4-music-player)
-- [Task 5: Custom Theme](#task-5-custom-theme)
-- [Task 6: Dark Mode](#task-6-dark-mode)
-- [Task 7: Loading Skeleton](#task-7-loading-skeleton)
+- [React Styling Tasks](#react-styling-tasks)
+   - [Task 0: Getting Started](#task-0-getting-started)
+   - [Task 1: Setup Tailwind](#task-1-setup-tailwind)
+   - [Task 2: Basic Components](#task-2-basic-components)
+   - [Task 3: Larger Component](#task-3-larger-components)
+   - [Task 4: Music Player](#task-4-music-player)
+   - [Task 5: Custom Theme](#task-5-custom-theme)
+   - [Task 6: Dark Mode](#task-6-dark-mode)
+   - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
+- [Typescript Introduction Tasks](#typescript-introduction-tasks)
 
 ---
 
 ## Project Overview
 
-**Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)
+This project was divided into two phases, each focusing on different aspects of building a music player application:
+
+### Phase 1: React Styling
+
+In the first phase, I implemented the design for a music player using **React** and **Tailwind CSS**. This phase aligned with the "Build a static version" step of the [Thinking in React Process](https://react.dev/learn/thinking-in-react). My goal was to take the provided Figma design and convert it into a fully styled React application.
+
+- **What I Focused On:**  
+  - Replicating the design exactly as shown in the Figma.  
+  - Using Tailwind utility classes to create responsive, accessible, and visually dynamic components.  
+  - Avoiding props, state, or functionality for this phase, as it was focused purely on the UI.
+
+- **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)
 
 ---
+
+### Phase 2: TypeScript Introduction
+
+In the second phase, I built on the design from Phase 1 by introducing **TypeScript** to implement the functionality of the music player. I leveraged TypeScript's type safety to ensure the code was maintainable and robust while adding interactivity to the app.
+
+- **What I Focused On:**  
+  - Adding functionality to the components I created in Phase 1 using TypeScript.  
+  - Applying TypeScript concepts like type safety, null safety, and type inference.  
+  - Ensuring the player was fully functional and adhered to the Figma design and demo.
+
+- **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)  
+- **Demo from Curriculum:** [Atlas Music Player Demo](https://atlas-music-player.netlify.app/)
+
+---
+
 
 ## Resources
 
 ### **What I Watched**
 
-- **[Tailwind in 100 Seconds](https://www.youtube.com/watch?v=mr15Xzb1Ook):** A quick introduction to Tailwind CSS.
-- **[Designing with Tailwind CSS](https://www.youtube.com/playlist?list=PL7CcGwsqRpSM3w9BT_21tUU8JN2SnyckR):** A tutorial from the creator of Tailwind.
+- **React Styling Phase:**
+  - [Tailwind in 100 Seconds](https://www.youtube.com/watch?v=mr15Xzb1Ook)
+  - [Designing with Tailwind CSS](https://www.youtube.com/playlist?list=PL7CcGwsqRpSM3w9BT_21tUU8JN2SnyckR)
+- **TypeScript Introduction Phase:**
+  - [Typescript in 100 Seconds](https://www.youtube.com/watch?v=zQnBQ4tB3ZA)
 
 ### **What I Read**
 
-- **[Tailwind: A Utility Class Approach to Styling](https://atlas-jswank.github.io/blog/tailwind/):** An introduction to Tailwind CSS.
-- **[The Case for Atomic CSS](https://johnpolacek.github.io/the-case-for-atomic-css/):** A deep dive into the "why" behind utility-first CSS (optional reading).
+- **React Styling Phase:**
+  - [Tailwind: A Utility Class Approach to Styling](https://atlas-jswank.github.io/blog/tailwind/)
+  - [The Case for Atomic CSS](https://johnpolacek.github.io/the-case-for-atomic-css/)
+- **TypeScript Introduction Phase:**
+  - [Why Typescript?](https://atlas-jswank.github.io/blog/typescript/)
+  - [Using Typescript](https://atlas-jswank.github.io/blog/how-to-use-typescript/)
+  - [Typescript Cheat Sheet](https://www.sitepen.com/blog/typescript-cheat-sheet)
+  - [Typescript React Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/)
 
 ### **Tools I Used**
 
-- **[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss):** Autocomplete for Tailwind class names.
-- **[Prettier Tailwind Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss):** Automatically sorts Tailwind class names for better organization.
+- **React Styling Phase:**
+  - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+  - [Prettier Tailwind Plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+- **TypeScript Introduction Phase:**
+  - [Total TypeScript VS Code Extension](https://www.totaltypescript.com/vscode-extension)
+  - [Pretty TypeScript Errors VS Code Extension](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
 
 ---
 
 ## Learning Objectives
 
-- Explain the benefits of a utility-class approach to styling.
-- Style React components using Tailwind CSS.
-- Customize a design system with Tailwind.
+- **React Styling Phase:**
+  - Explain the benefits of a utility-class approach to styling.
+  - Style React components using Tailwind CSS.
+  - Customize a design system with Tailwind.
+- **TypeScript Introduction Phase:**
+  - Explain the benefits of a type-safe language.
+  - Explain the benefits of null safety in TypeScript.
+  - Learn how to use TypeScript with React.
 
 ---
 
-## Task 0: Getting Started
+## React Styling Tasks
+
+### Task 0: Getting Started
 
 To begin this project, I completed the following steps:
 
-### **What I Did**
+#### **What I Did**
 
 1. **Cloned the Repository:**
 
@@ -83,24 +131,24 @@ To begin this project, I completed the following steps:
 
 4. **Explored the Codebase:**
 
-### **Result**
+#### **Result**
 
 The development environment is set up, and the starter code is successfully running locally.
 
 ---
 
-## Task 1: Setup Tailwind
+### Task 1: Setup Tailwind
 
-### **Learning Objective**
+#### **Learning Objective**
 
 Learn how to set up Tailwind CSS in a React project.
 
-### **Resources**
+#### **Resources**
 
 - **[Installing Tailwind](https://atlas-jswank.github.io/blog/tailwind/#installing-tailwind):** Provided in curriculum
 - **[Installing Tailwind](https://tailwindcss.com/docs/installation):** Official guide to installing Tailwind CSS.
 
-### **What I Did**
+#### **What I Did**
 
 1. **Installed Tailwind CSS:**
 
@@ -139,25 +187,25 @@ Learn how to set up Tailwind CSS in a React project.
      npm run dev
      ```
 
-### **Result**
+#### **Result**
 
 Tailwind CSS is successfully set up in the project. The configuration includes paths to template files, and Tailwind directives are added to the CSS file. No custom styles have been added yet; these will be implemented in upcoming tasks.
 
 ---
 
-## Task 2: Basic Components
+### Task 2: Basic Components
 
-### **Learning Objective**
+#### **Learning Objective**
 
 Learn how to style basic components using Tailwind CSS.
 
-### **Resources**
+#### **Resources**
 
 - **[Common Utility Classes](https://atlas-jswank.github.io/blog/tailwind/#common-utility-classes):** Overview of Tailwind's utility-first classes.
 - **[Flexbox Layouts](https://atlas-jswank.github.io/blog/tailwind/#flexbox-layouts):** Guide to building layouts using Flexbox.
 - **[Lucide Icons](https://lucide.dev/icons/):** Icon library used to implement buttons and controls.
 
-### **What I Did**
+#### **What I Did**
 
 1. **Installed Dependencies:**
 
@@ -193,28 +241,28 @@ Learn how to style basic components using Tailwind CSS.
 
 ---
 
-### **Result**
+#### **Result**
 
 The static components are rendered and styled as per the requirements. The layout is functional and matches the general structure of the Figma design. Further adjustments will be made in future tasks as needed.
 
 ---
 
-## Task 3: Larger Components
+### Task 3: Larger Components
 
-### **Learning Objective**
+#### **Learning Objective**
 
 Use the components from the previous task to build larger, composite components that match the design provided in the Figma file.
 
 ---
 
-### **Resources**
+#### **Resources**
 
 - **[Figma Design](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f):** Component layout and styling reference.
 - **[Tailwind CSS Documentation](https://tailwindcss.com/docs):** Official guide for utility classes.
 
 ---
 
-### **What I Did**
+#### **What I Did**
 
 1. **Created `CurrentlyPlaying` Component:**
    - **File Name:** `src/components/CurrentlyPlaying.jsx`
@@ -241,7 +289,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Result**
+#### **Result**
 
 - The `CurrentlyPlaying` component correctly combines and displays the **CoverArt**, **SongTitle**, **PlayControls**, and **VolumeControls** components in a cohesive layout.
 - The `Playlist` component uses the **PlayListItem** component to display a list of songs, with spacing and hover effects for better visual clarity.
@@ -249,23 +297,23 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-## Task 4: Music Player
+### Task 4: Music Player
 
-### Learning Objective
+#### Learning Objective
 
 - Build a fully responsive music player component by combining previously created components.
 - Implement a layout that adapts to different screen sizes using Tailwind utility classes.
 
 ---
 
-### Resources
+#### Resources
 
 - **[Flexbox Layouts](https://atlas-jswank.github.io/blog/tailwind/#flexbox-layouts):** A guide to building flexible layouts with Tailwind CSS.
 - **[Responsive Layouts](https://atlas-jswank.github.io/blog/tailwind/#responsive-layouts):** Tips on creating layouts that adapt to various screen sizes.
 
 ---
 
-### What I Did
+#### What I Did
 
 1. **Created the MusicPlayer Component:**
 
@@ -286,7 +334,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### Result
+#### Result
 
 - The `MusicPlayer` component integrates the `CurrentlyPlaying` and `Playlist` components into a responsive layout.
 - The app layout is enhanced with the addition of the `Footer`.
@@ -294,15 +342,15 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-## Task 5: Custom Theme
+### Task 5: Custom Theme
 
-### **Learning Objective**
+#### **Learning Objective**
 
 - Learn to customize the color scheme in Tailwind.
 
 ---
 
-### **Resources**
+#### **Resources**
 
 - **[Using Custom Colors](https://tailwindcss.com/docs/customizing-colors#adding-additional-colors):** Guide to adding custom colors in Tailwind.
 - **[Tailwind CSS Color Generator](https://uicolors.app/create):** Tool to generate vibrant color palettes.
@@ -310,7 +358,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **What I Did**
+#### **What I Did**
 
 1. **Added Custom Colors:**
 
@@ -334,7 +382,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Result**
+#### **Result**
 
 - A bold retro-inspired theme with custom colors applied across all components.
 - Improved alignment and spacing between `CurrentlyPlaying` and `Playlist`.
@@ -342,7 +390,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Troubleshooting**
+#### **Troubleshooting**
 
 1. **Alignment Issues:**
 
@@ -359,15 +407,15 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-## Task 6: Dark Mode
+### Task 6: Dark Mode
 
-### **Learning Objective**
+#### **Learning Objective**
 
 - Implement a dark mode that honors the user's operating system preferences and allows manual toggling between light and dark modes.
 
 ---
 
-### **Resources**
+#### **Resources**
 
 - **[Dark Mode Documentation](https://tailwindcss.com/docs/dark-mode):** Official Tailwind CSS guide for enabling dark mode.
 - **[Tailwind Config Reference](https://tailwindcss.com/docs/theme):** Documentation on customizing themes.
@@ -375,7 +423,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **What I Did**
+#### **What I Did**
 
 1. **Enabled Dark Mode in Tailwind Configuration:**
 
@@ -409,7 +457,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Result**
+#### **Result**
 
 - **Dark Mode:**
   - Backgrounds are darker (e.g., `darkerTeal`, `darkMagenta`) for improved readability.
@@ -420,7 +468,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Troubleshooting**
+#### **Troubleshooting**
 
 1. **Low Contrast:**
    - Use the [Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify color accessibility.
@@ -433,15 +481,15 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-## Task 7: Loading Skeleton
+### Task 7: Loading Skeleton
 
-### **Learning Objective**
+#### **Learning Objective**
 
 - Implement a skeleton loader to improve user experience during content loading.
 
 ---
 
-### **Resources**
+#### **Resources**
 
 - **[Tailwind CSS Skeletons](https://tailwindcss.com/docs/animation#pulse):** Official guide for creating skeleton loaders with `animate-pulse`.
 - **[Skeleton Loading Patterns](https://css-tricks.com/building-skeleton-screens-css-custom-properties/):** Article on best practices for skeleton loaders.
@@ -449,7 +497,7 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **What I Did**
+#### **What I Did**
 
 1. **Created the Skeleton Component:**
 
@@ -471,10 +519,12 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-### **Result**
+#### **Result**
 
 - **Skeleton Loader:**
   - Displays a visually accurate placeholder for the `MusicPlayer` while the data is loading.
   - Ensures seamless transition from loading to fully rendered content.
 
 ---
+
+## Typescript Introduction Tasks
