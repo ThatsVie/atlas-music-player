@@ -25,6 +25,9 @@
   - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
 - [Typescript Introduction Tasks](#typescript-introduction-tasks)
   - [Typescript: Task 0: Getting Started](#typescript-task-0-getting-started)
+  - [Task 1: Currently Playing](#task-1-currently-playing)
+  - [Task 2: Playlist and Music Player](#task-2-playlist-and-music-player)
+  - [Task 3: Audio Player](#task-3-audio-player)
 
 ---
 
@@ -572,3 +575,178 @@ Use the components from the previous task to build larger, composite components 
 
 - The foundation for implementing state management and API integration is set.
 - A clear understanding of the project's objectives and API capabilities was achieved.
+
+---
+
+### Task 1: Currently Playing
+
+#### **Learning Objective**
+
+- Convert React components from **JavaScript** to **TypeScript** for improved type safety and maintainability.
+- Implement state management and integrate API data to enhance functionality.
+- Use TypeScript types for props instead of libraries like `prop-types`.
+
+---
+
+#### **What I Did**
+
+1. **Converted Components to TypeScript:**
+   - Updated the following components to use `.tsx` extensions:
+     - `CoverArt`
+     - `SongTitle`
+     - `PlayControls`
+     - `VolumeControls`
+     - `PlayListItem`
+   - Defined TypeScript types for all props in each component.
+
+2. **Fetched Data from API:**
+   - Integrated API endpoints to fetch:
+     - Playlist data (`/api/v1/playlist`)
+     - Song details (`/api/v1/songs/:id`)
+     - Lyrics (`/api/v1/lyrics/:id`).
+
+3. **Implemented State Management:**
+   - Added `useState` and `useEffect` hooks to manage:
+     - The currently playing song.
+     - Lyrics display for the current song.
+     - Playback status (playing/paused).
+     - Playback speed and volume levels.
+
+4. **Enhanced `CoverArt` Functionality:**
+   - Displayed album cover art for the currently playing song.
+   - Added hover functionality to show lyrics fetched from the API.
+
+5. **Added Interactive Controls:**
+   - **Playback Speed Button:** Cycles through 0.5x, 1x, and 2x speeds.
+   - **Play/Pause Button:** Toggles song playback state.
+   - **Navigation Buttons:** 
+     - Back button: Navigates to the previous song.
+     - Forward button: Navigates to the next song.
+     - Shuffle button: Plays a random song from the playlist.
+   - **Volume Slider:** Adjusts audio playback volume.
+
+6. **Managed Component Hierarchy:**
+   - Lifted shared state to a parent component to ensure data consistency across:
+     - `CurrentlyPlaying`
+     - `AudioPlayer`
+     - `PlayControls`
+     - `Playlist`
+
+7. **Debugged and Tested:**
+   - Fixed issues with lyrics rendering.
+   - Ensured proper functionality for all controls.
+
+---
+
+#### **Result**
+
+- The `CurrentlyPlaying` section now dynamically fetches and displays:
+  - The current song's title, artist, cover art, and lyrics.
+  - Playback controls, including speed, volume, and navigation.
+- All components are fully converted to TypeScript with props validation for enhanced readability and maintainability.
+
+---
+
+### Task 2: Playlist and Music Player
+
+#### **Learning Objective**
+
+- Convert key components from **JavaScript** to **TypeScript** for type safety and better maintainability.
+- Manage shared state effectively across components to ensure seamless interaction.
+- Dynamically render playlist data fetched from the API and handle user interactions with the playlist.
+
+---
+
+#### **What I Did**
+
+1. **Converted Components to TypeScript:**
+   - Updated the following components to `.tsx` extensions:
+     - `MusicPlayer`
+     - `Playlist`
+     - `PlayListItem`
+   - Defined detailed TypeScript types for all props and state variables to eliminate runtime errors.
+
+2. **Fetched Playlist Data:**
+   - Integrated the API endpoint `/api/v1/playlist` to fetch playlist data dynamically.
+   - Used `useEffect` to fetch the data on component mount.
+   - Ensured that the first song in the playlist is set as the default currently playing song.
+
+3. **Implemented `MusicPlayer` Functionality:**
+   - Organized the application’s structure to make `MusicPlayer` the parent component.
+   - Managed shared state (`playlist`, `currentlyPlayingId`) in `MusicPlayer` to pass it down to child components:
+     - `CurrentlyPlaying`
+     - `Playlist`
+
+4. **Added Playlist Interaction:**
+   - Dynamically rendered a list of playlist items using the data fetched from the API.
+   - Used conditional styling to highlight the currently playing song.
+   - Made playlist items clickable to update the currently playing song.
+
+5. **Enhanced User Experience:**
+   - Displayed the `LoadingSkeleton` component while the playlist data is being fetched.
+   - Ensured smooth navigation between songs when using the playlist or playback controls.
+
+6. **Debugging and Testing:**
+   - Verified that clicking a song in the playlist updates the currently playing song and its corresponding details.
+   - Ensured that playlist items reflect changes when navigating songs using the back/forward controls.
+
+---
+
+#### **Result**
+
+- The `Playlist` component now dynamically displays a list of songs with:
+  - Clickable functionality to change the currently playing song.
+  - A clear visual indication of the currently selected song.
+- The `MusicPlayer` component seamlessly manages state and interactions, ensuring consistent functionality across child components.
+- All components are converted to TypeScript for enhanced reliability and developer experience.
+
+---
+
+### Task 3: Audio Player
+
+#### **Learning Objective**
+
+- Use **React state** to manage an HTML `<audio>` element for audio playback.
+- Seamlessly integrate custom playback controls to manage play/pause, volume, and playback speed without relying on the built-in audio element controls.
+
+---
+
+#### **What I Did**
+
+1. **Created the `AudioPlayer` Component:**
+   - Built a new component at `src/components/AudioPlayer.tsx` to handle audio playback functionality for the currently selected song.
+   - Managed the audio element using the `useRef` hook, ensuring direct access for controlling playback.
+
+2. **Integrated Custom Playback Controls:**
+   - Removed reliance on the default audio controls, instead connecting the audio element to the following components:
+     - `PlayControls`: To toggle play/pause and manage playback speed.
+     - `VolumeControls`: To dynamically adjust the volume.
+   - Updated the component to react to changes in playback state (`isPlaying`), volume, and playback speed.
+
+3. **Managed Audio State Dynamically:**
+   - Configured the `audio` element to:
+     - Play the currently selected song when `isPlaying` is true.
+     - Pause playback when `isPlaying` is false.
+     - Dynamically update the playback speed and volume in real time using `useEffect`.
+
+4. **Handled Song Changes:**
+   - Ensured that the audio source (`songUrl`) updates when a new song is selected.
+   - Automatically started playback of the new song when `isPlaying` was true.
+
+5. **Debugging and Testing:**
+   - Verified that the audio element plays and pauses correctly based on the `PlayControls` toggle.
+   - Confirmed that the volume adjusts smoothly when using the `VolumeControls` slider.
+   - Tested that the playback speed dynamically responds to user changes (e.g., 0.5x, 1x, 2x).
+
+---
+
+#### **Result**
+
+- The `AudioPlayer` component:
+  - Plays and pauses the currently selected song based on `isPlaying`.
+  - Adjusts playback speed and volume dynamically in response to user interaction.
+  - Integrates seamlessly with the rest of the `atlas-music-player` application, relying on state managed by `CurrentlyPlaying`.
+
+- Users can now fully control audio playback using the custom UI, making the music player intuitive and functional.
+
+---
