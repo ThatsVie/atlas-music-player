@@ -1,4 +1,6 @@
-export default function Footer() {
+import React from 'react';
+
+const Footer: React.FC = () => {
   return (
     <footer className='text-center p-6 bg-lightTeal dark:bg-darkMagenta text-black dark:text-white font-semibold'>
       &copy; {new Date().getFullYear()} Atlas School -
@@ -10,4 +12,6 @@ export default function Footer() {
       </a>
     </footer>
   );
-}
+};
+
+export default Footer;

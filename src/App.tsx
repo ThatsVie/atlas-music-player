@@ -4,12 +4,12 @@ import MusicPlayer from './components/MusicPlayer';
 import LoadingSkeleton from './components/LoadingSkeleton';
 import Footer from './components/Footer';
 
-function App() {
-  const [isDarkMode, setIsDarkMode] = useState(
+const App: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
     () => window.matchMedia('(prefers-color-scheme: dark)').matches
   );
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -24,10 +24,9 @@ function App() {
   }, [isDarkMode]);
 
   useEffect(() => {
-    // Simulate data fetching
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -52,6 +51,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

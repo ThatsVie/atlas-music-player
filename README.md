@@ -13,16 +13,16 @@
   - [Tools I Used](#tools-i-used)
 - [Learning Objectives](#learning-objectives)
 - [React Styling Tasks](#react-styling-tasks)
-   - [React Styling: Task 0: Getting Started](#react-styling-task-0-getting-started)
-   - [Task 1: Setup Tailwind](#task-1-setup-tailwind)
-   - [Task 2: Basic Components](#task-2-basic-components)
-   - [Task 3: Larger Component](#task-3-larger-components)
-   - [Task 4: Music Player](#task-4-music-player)
-   - [Task 5: Custom Theme](#task-5-custom-theme)
-   - [Task 6: Dark Mode](#task-6-dark-mode)
-   - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
+  - [React Styling: Task 0: Getting Started](#react-styling-task-0-getting-started)
+  - [Task 1: Setup Tailwind](#task-1-setup-tailwind)
+  - [Task 2: Basic Components](#task-2-basic-components)
+  - [Task 3: Larger Component](#task-3-larger-components)
+  - [Task 4: Music Player](#task-4-music-player)
+  - [Task 5: Custom Theme](#task-5-custom-theme)
+  - [Task 6: Dark Mode](#task-6-dark-mode)
+  - [Task 7: Loading Skeleton](#task-7-loading-skeleton)
 - [Typescript Introduction Tasks](#typescript-introduction-tasks)
-   - [Typescript: Task 0: Getting Started](#typescript-task-0-getting-started)
+  - [Typescript: Task 0: Getting Started](#typescript-task-0-getting-started)
 
 ---
 
@@ -34,9 +34,10 @@ This project was divided into two phases, each focusing on different aspects of 
 
 In the first phase, I implemented the design for a music player using **React** and **Tailwind CSS**. This phase aligned with the "Build a static version" step of the [Thinking in React Process](https://react.dev/learn/thinking-in-react). My goal was to take the provided Figma design and convert it into a fully styled React application.
 
-- **What I Focused On:**  
-  - Replicating the design exactly as shown in the Figma.  
-  - Using Tailwind utility classes to create responsive, accessible, and visually dynamic components.  
+- **What I Focused On:**
+
+  - Replicating the design exactly as shown in the Figma.
+  - Using Tailwind utility classes to create responsive, accessible, and visually dynamic components.
   - Avoiding props, state, or functionality for this phase, as it was focused purely on the UI.
 
 - **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)
@@ -47,16 +48,16 @@ In the first phase, I implemented the design for a music player using **React** 
 
 In the second phase, I built on the design from Phase 1 by introducing **TypeScript** to implement the functionality of the music player. I leveraged TypeScript's type safety to ensure the code was maintainable and robust while adding interactivity to the app.
 
-- **What I Focused On:**  
-  - Adding functionality to the components I created in Phase 1 using TypeScript.  
-  - Applying TypeScript concepts like type safety, null safety, and type inference.  
+- **What I Focused On:**
+
+  - Adding functionality to the components I created in Phase 1 using TypeScript.
+  - Applying TypeScript concepts like type safety, null safety, and type inference.
   - Ensuring the player was fully functional and adhered to the Figma design and demo.
 
-- **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)  
+- **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)
 - **Demo from Curriculum:** [Atlas Music Player Demo](https://atlas-music-player.netlify.app/)
 
 ---
-
 
 ## Resources
 
@@ -542,9 +543,11 @@ Use the components from the previous task to build larger, composite components 
 #### **What I Did**
 
 1. **Continued Work in Existing Repository:**
+
    - Used the `atlas-music-player` repository created during the "React Styling" project.
 
 2. **Shifted Focus:**
+
    - Transitioned from building a static version of the music player to implementing its functionality.
    - Began planning state management for:
      - Playback status (e.g., playing or paused).
@@ -554,6 +557,7 @@ Use the components from the previous task to build larger, composite components 
      - Playlist management.
 
 3. **Explored the API:**
+
    - Reviewed the provided [API Documentation](http://localhost:5173/swagger.html) to understand endpoints for fetching playlist and song data.
    - Ensured the localhost server was running to access the Swagger documentation.
 
@@ -566,4 +570,3 @@ Use the components from the previous task to build larger, composite components 
 
 - The foundation for implementing state management and API integration is set.
 - A clear understanding of the project's objectives and API capabilities was achieved.
-
