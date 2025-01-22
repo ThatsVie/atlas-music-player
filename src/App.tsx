@@ -31,7 +31,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className='bg-brightYellow dark:bg-black min-h-screen flex flex-col transition-colors duration-300'>
+    <div className="bg-gradient-to-tr from-brightYellow via-lightTeal to-magenta dark:from-black dark:via-darkerTeal dark:to-darkMagenta min-h-screen flex flex-col transition-colors duration-300">
       <button
         onClick={toggleDarkMode}
         className='m-4 p-3 flex items-center gap-2 self-end rounded-full bg-darkTeal text-white dark:bg-lightTeal dark:text-black hover:shadow-lg focus:ring-4 focus:ring-lightTeal dark:focus:ring-teal transition-all duration-300'
