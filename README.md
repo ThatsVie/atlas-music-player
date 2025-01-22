@@ -4,6 +4,8 @@
 
 ![RetroPug](https://github.com/user-attachments/assets/f0bf4b6b-560f-481a-bd3d-79f074557fd0)
 
+**[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
+
 </div>
 
 ## Table of Contents
@@ -28,6 +30,7 @@
   - [Task 1: Currently Playing](#task-1-currently-playing)
   - [Task 2: Playlist and Music Player](#task-2-playlist-and-music-player)
   - [Task 3: Audio Player](#task-3-audio-player)
+  - [Task 4: Deploy Application](#task-4-deploy-application)
 
 ---
 
@@ -748,5 +751,47 @@ Use the components from the previous task to build larger, composite components 
   - Integrates seamlessly with the rest of the `atlas-music-player` application, relying on state managed by `CurrentlyPlaying`.
 
 - Users can now fully control audio playback using the custom UI, making the music player intuitive and functional.
+
+---
+
+
+
+### Task 4: Deploy Application
+
+#### **Learning Objective**
+- Understand the process of deploying a React application to a production environment using Netlify.
+- Gain experience in setting up a live URL for the application, making it publicly accessible.
+
+---
+
+#### **What I Did**
+
+1. **Prepared the Application for Deployment**
+   - Ran the build command:
+     ```bash
+     npm run build
+     ```
+
+2. **Deployed the Application to Netlify**
+   - Logged in to [Netlify](https://www.netlify.com/) and created a new site.
+   - Selected the **drag-and-drop deployment method**:
+     - Dragged the `dist` folder into Netlify's deployment area.
+   - Netlify processed the upload and provided a live URL.
+
+3. **Customized the Site Name**
+   - Renamed the site to: `atlas-music-player-vp`.
+   - The app is now accessible at: [https://atlas-music-player-vp.netlify.app/](https://atlas-music-player-vp.netlify.app/).
+
+4. **Tested the Deployment**
+   - Verified that:
+     - All functionality, including playlist management, playback, and styling, works as expected.
+     - The site is responsive in both dark and light modes.
+   - Ensured all assets (e.g., favicons, album covers) load correctly.
+
+---
+
+#### **Result**
+- The application is live and publicly accessible.
+- The deployment process to Netlify was successful, and the site name was customized as required.
 
 ---
