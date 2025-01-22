@@ -1,12 +1,13 @@
-<div align="center">
+<div align="center"> 
 
 # Atlas Music Player: React Styling And Typescript Introduction
 
 ![RetroPug](https://github.com/user-attachments/assets/f0bf4b6b-560f-481a-bd3d-79f074557fd0)
 
-**[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
+## 🌐 **[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
 
 </div>
+
 
 ## Table of Contents
 
