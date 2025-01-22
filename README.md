@@ -2,6 +2,8 @@
 
 # Atlas Music Player: React Styling And Typescript Introduction
 
+![RetroPug](https://github.com/user-attachments/assets/f0bf4b6b-560f-481a-bd3d-79f074557fd0)
+
 </div>
 
 ## Table of Contents
