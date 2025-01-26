@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CoverArt Component > renders correctly with cover image and lyrics 1`] = `
+<div>
+  <div
+    class="relative mb-6 aspect-square"
+  >
+    <img
+      alt="Album cover"
+      class="h-full w-full rounded-md object-cover block align-middle"
+      src="https://example.com/cover.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`CoverArt Component > renders correctly with hover and lyrics 1`] = `
+<div>
+  <div>
+    <div
+      class="relative mb-6 aspect-square"
+    >
+      <img
+        alt="Album cover"
+        class="h-full w-full rounded-md object-cover block align-middle"
+        src="https://example.com/cover.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CoverArt Component > renders correctly with hover and no lyrics 1`] = `
+<div>
+  <div>
+    <div
+      class="relative mb-6 aspect-square"
+    >
+      <img
+        alt="Album cover"
+        class="h-full w-full rounded-md object-cover block align-middle"
+        src="https://example.com/cover.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CoverArt Component > renders correctly with null lyrics 1`] = `
+<div>
+  <div
+    class="relative mb-6 aspect-square"
+  >
+    <img
+      alt="Album cover"
+      class="h-full w-full rounded-md object-cover block align-middle"
+      src="https://example.com/cover.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`CoverArt Component > renders correctly with only cover image 1`] = `
+<div>
+  <div
+    class="relative mb-6 aspect-square"
+  >
+    <img
+      alt="Album cover"
+      class="h-full w-full rounded-md object-cover block align-middle"
+      src="https://example.com/cover.jpg"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PlayListItem Component > renders correctly with all props 1`] = `
+<div>
+  <li
+    aria-selected="false"
+    class="flex justify-between items-center p-2 rounded-md cursor-pointer hover:bg-brightYellow dark:hover:bg-darkMagenta transition-colors"
+    id="unique-1"
+    role="option"
+    tabindex="0"
+  >
+    <div>
+      <p
+        class="text-sm font-bold text-darkMagenta dark:text-lightTeal"
+      >
+        Song Title
+      </p>
+      <p
+        class="text-xs text-gray-700 dark:text-lightTeal"
+      >
+        Artist Name
+      </p>
+    </div>
+    <p
+      class="text-xs text-gray-700 dark:text-lightTeal"
+    >
+      3:45
+    </p>
+  </li>
+</div>
+`;

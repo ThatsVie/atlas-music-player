@@ -31,12 +31,15 @@
   - [Task 2: Playlist and Music Player](#task-2-playlist-and-music-player)
   - [Task 3: Audio Player](#task-3-audio-player)
   - [Task 4: Deploy Application](#task-4-deploy-application)
+- [React Unit Testing Tasks](#react-unit-testing-tasks)
+  - [React Unit Testing: Task 0: Getting Started](#react-unit-testing-task-0-getting-started)
+  - [Task 1: Snapshot Tests](#task-1-snapshots-tests)
 
 ---
 
 ## Project Overview
 
-This project was divided into two phases, each focusing on different aspects of building a music player application:
+This project was divided into three phases, each focusing on different aspects of building a music player application:
 
 ### Phase 1: React Styling
 
@@ -61,9 +64,27 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
   - Adding functionality to the components I created in Phase 1 using TypeScript.
   - Applying TypeScript concepts like type safety, null safety, and type inference.
   - Ensuring the player was fully functional and adhered to the Figma design and demo.
+  - **Added an Instructions Modal:**  
+    - Designed a dynamic instructions modal to guide users on navigating and interacting with the music player.  
+    - The modal includes accessibility features like keyboard navigation, mouse interaction, and additional features.  
+    - Enabled closing the modal by clicking outside it or using the "Close" button, ensuring intuitive user experience.
+
 
 - **Figma Design:** [Atlas Music Player](https://www.figma.com/design/6qiRGbMAIYK7AUoYOCohpq/Atlas-Music-Player?node-id=0-1&p=f)
 - **Demo from Curriculum:** [Atlas Music Player Demo](https://atlas-music-player.netlify.app/)
+
+---
+
+### Phase 3: React Unit Testing
+
+In the third phase, I focused on writing **unit tests** for the music player app to ensure its functionality and reliability. This phase emphasized creating comprehensive tests for React components, hooks, and APIs using modern testing tools.
+
+- **What I Focused On:**
+  - Writing snapshot tests for components to ensure consistent rendering.
+  - Testing React components and hooks for proper functionality.
+  - Mocking API calls with **Mock Service Worker (MSW)** for reliable tests.
+  - Generating code coverage reports to evaluate test quality.
+  - Automating testing workflows in GitHub Actions.
 
 ---
 
@@ -76,6 +97,9 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
   - [Designing with Tailwind CSS](https://www.youtube.com/playlist?list=PL7CcGwsqRpSM3w9BT_21tUU8JN2SnyckR)
 - **TypeScript Introduction Phase:**
   - [Typescript in 100 Seconds](https://www.youtube.com/watch?v=zQnBQ4tB3ZA)
+- **React Unit Testing Phase:**
+  - [What Is React Testing Library?](https://www.youtube.com/watch?v=JKOwJUM4_RM)
+
 
 ### **What I Read**
 
@@ -87,6 +111,9 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
   - [Using Typescript](https://atlas-jswank.github.io/blog/how-to-use-typescript/)
   - [Typescript Cheat Sheet](https://www.sitepen.com/blog/typescript-cheat-sheet)
   - [Typescript React Cheat Sheet](https://react-typescript-cheatsheet.netlify.app/)
+- **React Unit Testing Phase:**
+  - [Unit Testing Best Practices](https://atlas-jswank.github.io/blog/unit-testing-tips/)
+  - [React Unit Testing](https://atlas-jswank.github.io/blog/react-testing/)
 
 ### **Tools I Used**
 
@@ -96,6 +123,11 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
 - **TypeScript Introduction Phase:**
   - [Total TypeScript VS Code Extension](https://www.totaltypescript.com/vscode-extension)
   - [Pretty TypeScript Errors VS Code Extension](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
+- **React Unit Testing Phase:**
+  - [Vitest](https://vitest.dev/): A test runner that integrates well with Vite.
+  - [Vitest VS Code Plugin](https://marketplace.visualstudio.com/items?itemName=vitest.explorer): Runs tests from the VS Code UI.
+  - [React Testing Library](https://testing-library.com/): A helper library for rendering, querying, and asserting on React components.
+  - [Mock Service Worker (MSW)](https://mswjs.io/): A library for mocking APIs during testing.
 
 ---
 
@@ -109,6 +141,12 @@ In the second phase, I built on the design from Phase 1 by introducing **TypeScr
   - Explain the benefits of a type-safe language.
   - Explain the benefits of null safety in TypeScript.
   - Learn how to use TypeScript with React.
+- **React Unit Testing Phase:**
+  - Learn to write snapshot tests.
+  - Understand how to test React components and hooks.
+  - Apply mocking and spying to unit tests.
+  - Learn to generate code coverage reports for unit tests.
+
 
 ---
 
@@ -812,5 +850,87 @@ Use the components from the previous task to build larger, composite components 
 
 - The application is live and publicly accessible.
 - The deployment process to Netlify was successful, and the site name was customized as required.
+
+---
+
+## React Unit Testing Tasks
+
+### **React Unit Testing: Task 0: Getting Started**
+
+#### **Learning Objective**
+
+- Set up the testing environment with **Vitest** and **React Testing Library**.
+- Understand how to configure a test runner and write basic tests.
+
+#### **What I Did**
+
+1. **Installed and Configured Vitest:**
+   - Added Vitest as a dependency to the project.
+   - Configured a `test` script in the `package.json` file:
+     ```json
+     "scripts": {
+       "test": "vitest"
+     }
+     ```
+   - Installed the Vitest VS Code Plugin for an integrated development experience.
+
+2. **Set Up Mocking with MSW:**
+   - Integrated Mock Service Worker (MSW) for mocking API calls during tests.
+   - Created a `mockServer.ts` file to define API handlers for mocking.
+
+3. **Added React Testing Library:**
+   - Used React Testing Library to render and query components in tests.
+
+4. **Ran Initial Tests:**
+   - Verified that the testing setup works by writing and running a simple snapshot test.
+
+##### **Result**
+
+- The project is now configured with a robust testing environment.
+- Snapshot tests, component tests, and API mocking are all ready to be implemented in future tasks.
+
+---
+
+
+### Task 1: Snapshot Tests
+
+#### **Learning Objective**
+
+- Learn how to write snapshot tests for React components to ensure UI stability and consistency.
+- Understand how to test different combinations of props effectively.
+
+---
+
+#### **What I Did**
+
+1. **Created Snapshot Tests for Components**  
+   - Added snapshot tests for the following components:
+     - `CoverArt`
+     - `PlayListItem`
+     - `SongTitle`
+     - `VolumeControls`
+
+2. **Tested Prop Variations**  
+   - Wrote tests to verify that components render correctly with various combinations of props:
+     - For `CoverArt`, tested different image URLs and alt text.
+     - For `PlayListItem`, tested combinations of `title`, `artist`, `duration`, and `isCurrent`.
+     - For `SongTitle`, tested different title lengths and formats.
+     - For `VolumeControls`, tested different initial volume levels and interaction states.
+
+3. **Generated Snapshots**  
+   - Used the `@testing-library/react` and `vitest` libraries to render components and generate snapshot files.
+
+4. **Ensured All Tests Pass**  
+   - Verified that snapshot tests pass for all components using the `npm run test -- -u` command.
+
+5. **Stored Snapshots**  
+   - All snapshots were auto saved in the `src/__tests__/__snapshots__` directory for version control and future comparisons.
+
+---
+
+#### **Result**
+
+- Snapshot tests ensure that UI changes are intentional by catching unintended modifications.
+- All components render correctly with various props, maintaining consistency across the application.
 
 ---

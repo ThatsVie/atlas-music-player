@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SongTitle Component > matches snapshot with both title and artist 1`] = `
+<div>
+  <div>
+    <h2
+      class="mb-2 text-2xl leading-8 font-bold"
+    >
+      Test Song
+    </h2>
+    <p
+      class="mb-4"
+    >
+      Test Artist
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SongTitle Component > matches snapshot with empty props 1`] = `
+<div>
+  <div>
+    <h2
+      class="mb-2 text-2xl leading-8 font-bold"
+    />
+    <p
+      class="mb-4"
+    />
+  </div>
+</div>
+`;
+
+exports[`SongTitle Component > matches snapshot with only artist 1`] = `
+<div>
+  <div>
+    <h2
+      class="mb-2 text-2xl leading-8 font-bold"
+    />
+    <p
+      class="mb-4"
+    >
+      Test Artist
+    </p>
+  </div>
+</div>
+`;
+
+exports[`SongTitle Component > matches snapshot with only title 1`] = `
+<div>
+  <div>
+    <h2
+      class="mb-2 text-2xl leading-8 font-bold"
+    >
+      Test Song
+    </h2>
+    <p
+      class="mb-4"
+    />
+  </div>
+</div>
+`;
