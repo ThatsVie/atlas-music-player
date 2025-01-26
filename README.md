@@ -33,7 +33,7 @@
   - [Task 4: Deploy Application](#task-4-deploy-application)
 - [React Unit Testing Tasks](#react-unit-testing-tasks)
   - [React Unit Testing: Task 0: Getting Started](#react-unit-testing-task-0-getting-started)
-  - [Task 1: Snapshot Tests](#task-1-snapshots-tests)
+  - [Task 1: Snapshot Tests](#task-1-snapshot-tests)
 
 ---
 
