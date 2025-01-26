@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from 'react';
 // Props
 interface AudioPlayerProps {
   songUrl: string;
-  isPlaying: boolean; // Play/pause
-  volume: number; // Volume level
+  isPlaying: boolean;
+  volume: number;
   playbackSpeed: number;
 }
 

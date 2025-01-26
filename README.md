@@ -1,4 +1,4 @@
-<div align="center"> 
+<div align="center">
 
 # Atlas Music Player: React Styling And Typescript Introduction
 
@@ -7,7 +7,6 @@
 ## 🌐 **[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
 
 </div>
-
 
 ## Table of Contents
 
@@ -595,6 +594,7 @@ Use the components from the previous task to build larger, composite components 
 #### **What I Did**
 
 1. **Converted Components to TypeScript:**
+
    - Updated the following components to use `.tsx` extensions:
      - `CoverArt`
      - `SongTitle`
@@ -604,12 +604,14 @@ Use the components from the previous task to build larger, composite components 
    - Defined TypeScript types for all props in each component.
 
 2. **Fetched Data from API:**
+
    - Integrated API endpoints to fetch:
      - Playlist data (`/api/v1/playlist`)
      - Song details (`/api/v1/songs/:id`)
      - Lyrics (`/api/v1/lyrics/:id`).
 
 3. **Implemented State Management:**
+
    - Added `useState` and `useEffect` hooks to manage:
      - The currently playing song.
      - Lyrics display for the current song.
@@ -617,19 +619,22 @@ Use the components from the previous task to build larger, composite components 
      - Playback speed and volume levels.
 
 4. **Enhanced `CoverArt` Functionality:**
+
    - Displayed album cover art for the currently playing song.
    - Added hover functionality to show lyrics fetched from the API.
 
 5. **Added Interactive Controls:**
+
    - **Playback Speed Button:** Cycles through 0.5x, 1x, and 2x speeds.
    - **Play/Pause Button:** Toggles song playback state.
-   - **Navigation Buttons:** 
+   - **Navigation Buttons:**
      - Back button: Navigates to the previous song.
      - Forward button: Navigates to the next song.
      - Shuffle button: Plays a random song from the playlist.
    - **Volume Slider:** Adjusts audio playback volume.
 
 6. **Managed Component Hierarchy:**
+
    - Lifted shared state to a parent component to ensure data consistency across:
      - `CurrentlyPlaying`
      - `AudioPlayer`
@@ -664,6 +669,7 @@ Use the components from the previous task to build larger, composite components 
 #### **What I Did**
 
 1. **Converted Components to TypeScript:**
+
    - Updated the following components to `.tsx` extensions:
      - `MusicPlayer`
      - `Playlist`
@@ -671,22 +677,26 @@ Use the components from the previous task to build larger, composite components 
    - Defined detailed TypeScript types for all props and state variables to eliminate runtime errors.
 
 2. **Fetched Playlist Data:**
+
    - Integrated the API endpoint `/api/v1/playlist` to fetch playlist data dynamically.
    - Used `useEffect` to fetch the data on component mount.
    - Ensured that the first song in the playlist is set as the default currently playing song.
 
 3. **Implemented `MusicPlayer` Functionality:**
+
    - Organized the application’s structure to make `MusicPlayer` the parent component.
    - Managed shared state (`playlist`, `currentlyPlayingId`) in `MusicPlayer` to pass it down to child components:
      - `CurrentlyPlaying`
      - `Playlist`
 
 4. **Added Playlist Interaction:**
+
    - Dynamically rendered a list of playlist items using the data fetched from the API.
    - Used conditional styling to highlight the currently playing song.
    - Made playlist items clickable to update the currently playing song.
 
 5. **Enhanced User Experience:**
+
    - Displayed the `LoadingSkeleton` component while the playlist data is being fetched.
    - Ensured smooth navigation between songs when using the playlist or playback controls.
 
@@ -718,22 +728,26 @@ Use the components from the previous task to build larger, composite components 
 #### **What I Did**
 
 1. **Created the `AudioPlayer` Component:**
+
    - Built a new component at `src/components/AudioPlayer.tsx` to handle audio playback functionality for the currently selected song.
    - Managed the audio element using the `useRef` hook, ensuring direct access for controlling playback.
 
 2. **Integrated Custom Playback Controls:**
+
    - Removed reliance on the default audio controls, instead connecting the audio element to the following components:
      - `PlayControls`: To toggle play/pause and manage playback speed.
      - `VolumeControls`: To dynamically adjust the volume.
    - Updated the component to react to changes in playback state (`isPlaying`), volume, and playback speed.
 
 3. **Managed Audio State Dynamically:**
+
    - Configured the `audio` element to:
      - Play the currently selected song when `isPlaying` is true.
      - Pause playback when `isPlaying` is false.
      - Dynamically update the playback speed and volume in real time using `useEffect`.
 
 4. **Handled Song Changes:**
+
    - Ensured that the audio source (`songUrl`) updates when a new song is selected.
    - Automatically started playback of the new song when `isPlaying` was true.
 
@@ -747,6 +761,7 @@ Use the components from the previous task to build larger, composite components 
 #### **Result**
 
 - The `AudioPlayer` component:
+
   - Plays and pauses the currently selected song based on `isPlaying`.
   - Adjusts playback speed and volume dynamically in response to user interaction.
   - Integrates seamlessly with the rest of the `atlas-music-player` application, relying on state managed by `CurrentlyPlaying`.
@@ -755,11 +770,10 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-
-
 ### Task 4: Deploy Application
 
 #### **Learning Objective**
+
 - Understand the process of deploying a React application to a production environment using Netlify.
 - Gain experience in setting up a live URL for the application, making it publicly accessible.
 
@@ -768,18 +782,21 @@ Use the components from the previous task to build larger, composite components 
 #### **What I Did**
 
 1. **Prepared the Application for Deployment**
+
    - Ran the build command:
      ```bash
      npm run build
      ```
 
 2. **Deployed the Application to Netlify**
+
    - Logged in to [Netlify](https://www.netlify.com/) and created a new site.
    - Selected the **drag-and-drop deployment method**:
      - Dragged the `dist` folder into Netlify's deployment area.
    - Netlify processed the upload and provided a live URL.
 
 3. **Customized the Site Name**
+
    - Renamed the site to: `atlas-music-player-vp`.
    - The app is now accessible at: [https://atlas-music-player-vp.netlify.app/](https://atlas-music-player-vp.netlify.app/).
 
@@ -792,6 +809,7 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 #### **Result**
+
 - The application is live and publicly accessible.
 - The deployment process to Netlify was successful, and the site name was customized as required.
 

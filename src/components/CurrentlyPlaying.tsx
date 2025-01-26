@@ -10,24 +10,27 @@ interface Song {
   title: string;
   artist: string;
   duration: number;
-  cover: string; // URL
-  song: string; // URL
+  cover: string;
+  song: string;
 }
 
 interface CurrentlyPlayingProps {
-  playlist: Song[]; // all songs
-  currentlyPlayingId: string | null; // ID
+  playlist: Song[];
+  currentlyPlayingId: string | null;
   setCurrentlyPlayingId: React.Dispatch<React.SetStateAction<string | null>>;
+  isPlaying: boolean;
+  setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const CurrentlyPlaying: React.FC<CurrentlyPlayingProps> = ({
   playlist,
   currentlyPlayingId,
   setCurrentlyPlayingId,
+  isPlaying,
+  setIsPlaying,
 }) => {
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
   const [lyrics, setLyrics] = useState<string | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false); // Play/pause
   const [volume, setVolume] = useState<number>(50);
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1);
 
@@ -71,6 +74,7 @@ const CurrentlyPlaying: React.FC<CurrentlyPlayingProps> = ({
     );
     if (currentIndex > 0) {
       setCurrentlyPlayingId(playlist[currentIndex - 1].id);
+      setIsPlaying(true);
     }
   };
 
@@ -80,13 +84,17 @@ const CurrentlyPlaying: React.FC<CurrentlyPlayingProps> = ({
     );
     if (currentIndex < playlist.length - 1) {
       setCurrentlyPlayingId(playlist[currentIndex + 1].id);
+      setIsPlaying(true);
     }
   };
 
   if (!currentSong) return <div>Loading...</div>;
 
   return (
-    <div className='p-6 bg-brightYellow dark:bg-darkerTeal rounded-lg shadow-lg border-4 border-magenta transition-colors duration-300'>
+    <div
+      className='p-6 bg-brightYellow dark:bg-darkerTeal rounded-lg shadow-lg border-4 border-magenta transition-colors duration-300'
+      tabIndex={0}
+    >
       <CoverArt cover={currentSong.cover} lyrics={lyrics} />
       <SongTitle title={currentSong.title} artist={currentSong.artist} />
       <PlayControls
@@ -97,6 +105,7 @@ const CurrentlyPlaying: React.FC<CurrentlyPlayingProps> = ({
         onShuffleToggle={() => {
           const randomIndex = Math.floor(Math.random() * playlist.length);
           setCurrentlyPlayingId(playlist[randomIndex].id);
+          setIsPlaying(true);
         }}
         isShuffling={false}
         playbackSpeed={playbackSpeed}

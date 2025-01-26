@@ -10,10 +10,15 @@ const VolumeControls: React.FC<VolumeControlsProps> = ({
   volume,
   onVolumeChange,
 }) => {
-  // changes to the volume slider
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(event.target.value, 10);
     onVolumeChange(newVolume);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.stopPropagation(); // Prevent interference with playlist navigation
+    }
   };
 
   return (
@@ -21,9 +26,7 @@ const VolumeControls: React.FC<VolumeControlsProps> = ({
       <label htmlFor='volume-control' className='sr-only'>
         Volume Control
       </label>
-      {/* Volume Icon */}
       <Volume2 className='w-7 h-7 text-darkMagenta dark:text-lightTeal' />
-      {/* Volume Slider */}
       <input
         id='volume-control'
         type='range'
@@ -31,6 +34,7 @@ const VolumeControls: React.FC<VolumeControlsProps> = ({
         max='100'
         value={volume}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
         className='w-full h-2 rounded-full bg-lightTeal dark:bg-darkerTeal accent-teal dark:accent-lightTeal focus:outline-none focus:ring-2 focus:ring-brightPink dark:focus:ring-lightTeal transition'
       />
     </div>

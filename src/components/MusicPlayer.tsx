@@ -7,8 +7,8 @@ interface Song {
   title: string;
   artist: string;
   duration: number;
-  cover: string; // URL
-  song: string; // URL
+  cover: string;
+  song: string;
 }
 
 const MusicPlayer: React.FC = () => {
@@ -16,6 +16,7 @@ const MusicPlayer: React.FC = () => {
   const [currentlyPlayingId, setCurrentlyPlayingId] = useState<string | null>(
     null
   );
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchPlaylist = async () => {
@@ -23,13 +24,18 @@ const MusicPlayer: React.FC = () => {
         const response = await fetch('/api/v1/playlist');
         const data: Song[] = await response.json();
         setPlaylist(data);
-        setCurrentlyPlayingId(data[0]?.id || null); // first song as default
+        setCurrentlyPlayingId(data[0]?.id || null); // Default to first song
       } catch (error) {
         console.error('Error fetching playlist:', error);
       }
     };
     fetchPlaylist();
   }, []);
+
+  const playSong = (songId: string) => {
+    setCurrentlyPlayingId(songId);
+    setIsPlaying(true);
+  };
 
   if (playlist.length === 0) {
     return <div>Loading...</div>;
@@ -42,13 +48,16 @@ const MusicPlayer: React.FC = () => {
           playlist={playlist}
           currentlyPlayingId={currentlyPlayingId}
           setCurrentlyPlayingId={setCurrentlyPlayingId}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
         />
       </section>
+
       <section className='md:w-1/2 bg-teal border-brightPink border-4 rounded-xl shadow-lg p-6 dark:bg-darkerTeal dark:border-white'>
         <Playlist
           playlist={playlist}
           currentlyPlayingId={currentlyPlayingId}
-          setCurrentlyPlayingId={setCurrentlyPlayingId}
+          playSong={playSong} // Pass centralized playback function
         />
       </section>
     </div>
