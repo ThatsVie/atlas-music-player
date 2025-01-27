@@ -34,6 +34,7 @@
 - [React Unit Testing Tasks](#react-unit-testing-tasks)
   - [React Unit Testing: Task 0: Getting Started](#react-unit-testing-task-0-getting-started)
   - [Task 1: Snapshot Tests](#task-1-snapshot-tests)
+  - [Task 2: Mocking](#task-2-mocking)
 
 ---
 
@@ -932,5 +933,60 @@ Use the components from the previous task to build larger, composite components 
 
 - Snapshot tests ensure that UI changes are intentional by catching unintended modifications.
 - All components render correctly with various props, maintaining consistency across the application.
+
+---
+
+### Task 2: Mocking
+
+#### **Learning Objective**
+
+- Learn how to mock API calls during unit tests.
+- Understand how to use **Mock Service Worker (MSW)** for intercepting and mocking network requests.
+
+---
+
+#### **What I Did**
+
+1. **Setup Mock Service Worker (MSW)**  
+   - Installed `msw` as a development dependency using:
+     ```bash
+     npm install --save-dev msw
+     ```
+   - Configured MSW in the `src/mocks` directory:
+     - **`handlers.ts`**: Defined mock API routes:
+       - `/api/v1/playlist` for fetching playlist data.
+       - `/api/v1/songs/:id` for fetching song details.
+       - `/api/v1/lyrics/:id` for fetching song lyrics.
+     - **`server.ts`**: Set up the MSW server with these handlers.
+
+2. **Integrated MSW with Vitest**  
+   - Configured the MSW server in `vitest.setup.ts` to:
+     - Start the mock server before running tests.
+     - Reset handlers after each test to ensure independence.
+     - Stop the server after all tests are complete.
+
+3. **Wrote Unit Tests Using Mocked Data**  
+   - Created `src/__tests__/MusicPlayer.test.tsx` to verify that the `MusicPlayer` component renders playlist data from mocked API responses:
+     - Mocked `/api/v1/playlist` to return a playlist with two test songs.
+     - Used assertions to confirm playlist items (`Test Song 1`, `Test Song 2`) and their artists appear in the document.
+
+4. **Verified Data Mocking and Testing**  
+   - Ensured that real API calls are not made during tests and all API responses are replaced with mocked data from MSW.
+   - Used the following command to run tests and update snapshots:
+     ```bash
+     npm run test -- -u
+     ```
+     - **This command:**
+       - Runs all test files using Vitest.
+       - Updates snapshots if there are changes to ensure tests reflect the latest UI or component changes.
+
+---
+
+#### **Result**
+
+- **Mocking Achieved**: All API calls in the `MusicPlayer` tests are intercepted and replaced with controlled mocked responses.
+- **Component Verified**: The `MusicPlayer` component successfully renders playlist data fetched from the mocked API, ensuring independence from real backend services.
+- **Reusable Setup**: The MSW mock server is set up to support further tasks requiring API calls, promoting efficient and isolated testing.
+
 
 ---
