@@ -1,12 +1,26 @@
 <div align="center">
 
-# Atlas Music Player: React Styling And Typescript Introduction
+# Vietify - Music Player: React Styling, Typescript Introduction, and React Unit Testing
 
 ![RetroPug](https://github.com/user-attachments/assets/f0bf4b6b-560f-481a-bd3d-79f074557fd0)
 
 ## 🌐 **[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
 
+<table>
+  <tr>
+    <td align="center">
+      <strong>Light Mode</strong><br>
+      <img src="https://github.com/user-attachments/assets/dc908b76-d6fb-40dd-b570-bbd026f94777" alt="Light Mode" width="400">
+    </td>
+    <td align="center">
+      <strong>Dark Mode</strong><br>
+      <img src="https://github.com/user-attachments/assets/88c95779-a550-4aec-91b0-060dc41a2e84" alt="Dark Mode" width="400">
+    </td>
+  </tr>
+</table>
+
 </div>
+
 
 ## Table of Contents
 
