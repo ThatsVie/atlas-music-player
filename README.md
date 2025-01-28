@@ -1203,12 +1203,6 @@ Use the components from the previous task to build larger, composite components 
 
 ---
 
-#### **How to View the CI Pipeline**
-1. **Push any commit to `main`.** The workflow runs automatically.
-2. **Check the Actions tab** in the GitHub repository.
-3. **View the workflow logs** to see the test results and coverage report.
-
----
 
 #### **Result**
 **Automated testing and coverage reporting are now integrated.**  
