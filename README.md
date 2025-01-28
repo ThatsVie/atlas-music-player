@@ -1170,3 +1170,48 @@ Use the components from the previous task to build larger, composite components 
 **Screenshots for Submission**  
 - `coverage-ui.png` (VS Code Coverage Report)
 - `coverage-cli.png` (CLI Coverage Report)
+
+---
+
+### Task 5: Continuous Integration
+
+#### **Learning Objective**
+- Automate unit tests and code coverage reports using **GitHub Actions**.
+
+---
+
+#### **What I Did**
+
+1. **Created a GitHub Actions Workflow (`ci.yml`)**  
+   - The workflow is stored in `.github/workflows/ci.yml`.
+   - It triggers **automatically** on every push to the `main` branch.
+
+2. **Defined CI Pipeline**
+   - The workflow installs dependencies, runs tests, and generates a coverage report.
+   - It ensures that all tests must pass before merging new code.
+
+3. **Configured GitHub Actions**
+   - Used `actions/checkout` to fetch the latest repository changes.
+   - Used `actions/setup-node` to install Node.js version 20.
+   - Ran `npm run test` to execute all unit tests.
+   - Ran `npm run coverage` to generate the test coverage report.
+
+4. **Verified CI Pipeline Execution**
+   - Checked the **Actions tab** in GitHub to confirm successful workflow execution.
+   - Ensured the test output and coverage report were generated.
+
+---
+
+#### **How to View the CI Pipeline**
+1. **Push any commit to `main`.** The workflow runs automatically.
+2. **Check the Actions tab** in the GitHub repository.
+3. **View the workflow logs** to see the test results and coverage report.
+
+---
+
+#### **Result**
+**Automated testing and coverage reporting are now integrated.**  
+**The GitHub Actions workflow ensures all code changes are tested.**  
+**The CI pipeline prevents broken code from being merged into the main branch.**
+
+---
