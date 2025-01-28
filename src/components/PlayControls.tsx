@@ -22,7 +22,7 @@ const PlayControls: React.FC<PlayControlsProps> = ({
   playbackSpeed,
   onChangePlaybackSpeed,
 }) => {
-  // Keyboard handler for Enter or Space
+
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLButtonElement>,
     action: () => void

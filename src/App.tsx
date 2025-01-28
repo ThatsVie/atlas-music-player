@@ -71,9 +71,10 @@ const App: React.FC = () => {
         </button>
       </div>
 
-      <div className='flex-grow flex items-center justify-center p-4'>
+      <main className='flex-grow flex items-center justify-center p-4' role="main">
         {isLoading ? <LoadingSkeleton /> : <MusicPlayer />}
-      </div>
+      </main>
+
 
       <Footer />
 

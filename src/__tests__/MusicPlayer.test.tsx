@@ -1,6 +1,10 @@
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { beforeAll, test, expect, vi } from 'vitest';
+import { http, HttpResponse } from 'msw';
+import { server } from '@/mocks/server';
 import MusicPlayer from '../components/MusicPlayer';
+
+vi.spyOn(console, 'error').mockImplementation(() => {});
 
 beforeAll(() => {
   Object.defineProperty(global.HTMLMediaElement.prototype, 'play', {
@@ -44,6 +48,38 @@ test('sets the first song as default when the API loads', async () => {
   await waitFor(() => {
     expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
   });
+
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
+  });
+});
+
+
+test('handles API error gracefully', async () => {
+  // Arrange
+  const consoleErrorMock = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+  server.use(
+    http.get('/api/v1/playlist', () => HttpResponse.error())
+  );
+
+  // Act
+  render(<MusicPlayer />);
+
+  // Assert
+  await waitFor(() => {
+    expect(console.error).toHaveBeenCalled();
+  });
+
+  await waitFor(() => {
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining('Error fetching playlist'),
+      expect.anything()
+    );
+  });
+  
+  // Cleanup
+  consoleErrorMock.mockRestore();
 });
 
 test('toggles play/pause correctly', async () => {
@@ -129,5 +165,70 @@ test('speed button toggles between settings correctly', async () => {
   // Assert
   await waitFor(() => {
     expect(screen.getByLabelText(/playback speed is currently 2x/i)).toBeInTheDocument();
+  });
+});
+
+test('Play button toggles playback on Enter key press', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+  const playButton = await screen.findByLabelText(/start playback/i);
+
+  // Act
+  fireEvent.keyDown(playButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/pause playback/i)).toBeInTheDocument();
+  });
+
+  // Act
+  fireEvent.keyDown(playButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/start playback/i)).toBeInTheDocument();
+  });
+});
+
+test('Rewind button works with Space key press', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+  const rewindButton = await screen.findByLabelText(/rewind to the previous song/i);
+
+  // Act
+  fireEvent.keyDown(rewindButton, { key: ' ', code: 'Space', charCode: 32 });
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
+  });
+});
+
+test('Fast forward button works with Enter key press', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+  const fastForwardButton = await screen.findByLabelText(/fast forward to the next song/i);
+
+  // Act
+  fireEvent.keyDown(fastForwardButton, { key: 'Enter', code: 'Enter', charCode: 13 });
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 2/i)).toBeInTheDocument();
+  });
+});
+
+test('sets currentlyPlayingId to null when playlist is empty', async () => {
+  // Arrange
+  server.use(
+    http.get('/api/v1/playlist', () => HttpResponse.json([]))
+  );
+
+  // Act
+  render(<MusicPlayer />);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.queryByText(/mock song/i)).not.toBeInTheDocument();
   });
 });

@@ -14,5 +14,17 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      reportsDirectory: './coverage',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/__tests__/**/*',
+        'src/mocks/**/*',
+        'src/main.tsx',
+        'src/vite-env.d.ts'
+      ],
+    },
   },
 });

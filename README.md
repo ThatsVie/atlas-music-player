@@ -50,6 +50,7 @@
   - [Task 1: Snapshot Tests](#task-1-snapshot-tests)
   - [Task 2: Mocking](#task-2-mocking)
   - [Task 3: React Testing Library](#task-3-react-testing-library)
+  - [Task 4: Code Coverage](#task-4-code-coverage)
 
 ---
 
@@ -1082,3 +1083,90 @@ Use the components from the previous task to build larger, composite components 
 ---
 
 
+### **Task 4: Code Coverage**
+
+#### **Learning Objective**
+- Understand how to check **code coverage** for unit tests written in JavaScript.
+- Learn how to generate and interpret code coverage reports in both **VS Code UI** and **CLI**.
+
+---
+
+#### **What I Did**
+
+1. **Ran Coverage Analysis in VS Code**  
+   - Used the **Vitest VS Code plugin** to "Run Tests with Coverage."
+   - This provided a visual breakdown of tested and untested lines within the **MusicPlayer** component and related files.
+   - **Key Note:** The **VS Code coverage report differs from the CLI coverage report** because:
+     - VS Code plugin uses an in-editor approach to display coverage.
+     - CLI report aggregates coverage across all test files and displays a summary.
+   - **Screenshot**: Saved as `coverage-ui.png` in the project root.
+
+2. **Configured CLI Coverage Report**  
+   - Added a coverage script to `package.json`:
+     ```json
+     "scripts": {
+       "coverage": "vitest --coverage"
+     }
+     ```
+   - This allows us to run:
+     ```bash
+     npm run coverage
+     ```
+   - The CLI report provides:
+     - **Statement Coverage** (`% Stmts`): How many executable statements are tested.
+     - **Branch Coverage** (`% Branch`): How many logical branches (`if`, `else`, `switch`) are tested.
+     - **Function Coverage** (`% Funcs`): How many functions are executed during testing.
+     - **Line Coverage** (`% Lines`): How many lines of code are executed.
+   - **Screenshot**: Saved as `coverage-cli.png` in the project root.
+
+3. **Improved Code Coverage by Writing Additional Tests**  
+   - Identified **missed lines** in the coverage report.
+   - Added **more tests** to improve coverage in:
+     - `PlayControls.tsx` – Ensured shuffle button toggling worked correctly.
+     - `CurrentlyPlaying.tsx` – Verified it displayed the expected song information.
+   - **Mocking Adjustments**:  
+     - Ensured MSW was properly handling API requests to avoid untested scenarios.
+     - Added test cases for **API errors** and how the UI responds to failed requests.
+
+
+5. **Ignored `coverage/` in Git**  
+   - Since the **task only required screenshots**, the generated coverage folder was excluded from version control.
+   - Added this to `.gitignore`:
+     ```
+     # Ignore coverage reports
+     coverage/
+     ```
+
+---
+
+#### **How I Ran the Tests and Coverage Reports**
+
+1. **Run Tests with Coverage in VS Code**
+   - Used the **Vitest VS Code Plugin**.
+   - Selected "Run Tests with Coverage."
+   - Verified the UI breakdown of tested and untested lines.
+   - **Saved Screenshot:** `coverage-ui.png`.
+
+2. **Run CLI Coverage Report**
+   - Ran the following command:
+     ```bash
+     npm run coverage
+     ```
+   - Verified detailed breakdown of statement, branch, function, and line coverage.
+   - **Saved Screenshot:** `coverage-cli.png`.
+
+---
+
+#### **Result**
+
+**Achieved Comprehensive Test Coverage**  
+- Ensured that `MusicPlayer` and its related components are well-tested.
+- Verified code coverage results in **both VS Code UI and CLI**.
+
+**Improved Project Setup**  
+- **Added CLI script** (`npm run coverage`) for easy test coverage analysis.
+- **Excluded mock files** from coverage reports.
+
+**Screenshots for Submission**  
+- `coverage-ui.png` (VS Code Coverage Report)
+- `coverage-cli.png` (CLI Coverage Report)
