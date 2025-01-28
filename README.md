@@ -52,7 +52,7 @@
   - [Task 3: React Testing Library](#task-3-react-testing-library)
   - [Task 4: Code Coverage](#task-4-code-coverage)
   - [Task 5: Continuous Integration](#task-5-continuous-integration)
-
+- [Reflections](#reflections)
 ---
 
 ## Project Overview
@@ -1214,5 +1214,14 @@ Use the components from the previous task to build larger, composite components 
 **Automated testing and coverage reporting are now integrated.**  
 **The GitHub Actions workflow ensures all code changes are tested.**  
 **The CI pipeline prevents broken code from being merged into the main branch.**
+
+---
+
+## **Reflections**  
+
+This project reinforced the importance of breaking development into structured phases, making it easier to focus on design, functionality, and testing separately. I especially enjoyed the styling phase, where bringing the Figma design to life with Tailwind CSS was both creative and gratifying. Debugging test failures and ensuring realistic API mocking with MSW was challenging but ultimately made the tests more reliable. Automating workflows with GitHub Actions streamlined the testing process and provided confidence in the codebase. This project strengthened my skills in React, TypeScript, testing strategies, and CI/CD, all of which will be valuable in future work.
+
+With Love,
+[Vie P.](https://whatdoyouknowaboutlove.com/viepaula)  
 
 ---
