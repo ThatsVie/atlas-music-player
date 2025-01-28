@@ -51,6 +51,7 @@
   - [Task 2: Mocking](#task-2-mocking)
   - [Task 3: React Testing Library](#task-3-react-testing-library)
   - [Task 4: Code Coverage](#task-4-code-coverage)
+  - [Task 5: Continuous Integration](#task-5-continuous-integration)
 
 ---
 
