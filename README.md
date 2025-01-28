@@ -49,6 +49,7 @@
   - [React Unit Testing: Task 0: Getting Started](#react-unit-testing-task-0-getting-started)
   - [Task 1: Snapshot Tests](#task-1-snapshot-tests)
   - [Task 2: Mocking](#task-2-mocking)
+  - [Task 3: React Testing Library](#task-3-react-testing-library)
 
 ---
 
@@ -1004,3 +1005,80 @@ Use the components from the previous task to build larger, composite components 
 
 
 ---
+
+### Task 3: React Testing Library
+
+#### **Learning Objective**
+
+- Learn how to write unit tests for React components using **React Testing Library**.
+- Understand how to test user interactions and component functionality.
+
+---
+
+#### **What I Did**
+
+1. **Refined Testing Framework**  
+   - Used **Vitest** as the testing framework to ensure alignment with project requirements:
+     - Imported Vitest utilities like `test`, `expect`, `vi`, and lifecycle hooks (`beforeAll`).
+     - Replaced any Jest-specific syntax (e.g., `jest.fn()`) with `vi.fn()` for mocking.
+
+2. **Mocked HTMLMediaElement APIs**  
+   - Simulated browser media functionalities that `MusicPlayer` relies on:
+     - Mocked `play`, `pause`, `volume`, and `playbackRate` using `vi.fn()` to prevent errors in `jsdom` (test environment).
+     - Ensured that methods behave predictably during tests, even without a real DOM.
+
+3. **Enhanced API Mocking with MSW**  
+   - Continued leveraging the **Mock Service Worker (MSW)** setup from Task 2:
+     - Handlers for API routes (e.g., `/api/v1/playlist`) were reused to provide mock playlist data for tests.
+     - Centralized API mocking ensures consistency across tests and tasks.
+
+4. **Implemented Unit Tests for `MusicPlayer`**  
+   - **Created Five Unit Tests** in `src/__tests__/MusicPlayer.test.tsx`:
+     1. **Default Song**: Verified the first song in the playlist is set as default when the component loads.
+     2. **Play/Pause**: Tested toggling play/pause functionality updates the UI as expected.
+     3. **Next Song**: Checked that clicking the "Next" button updates the current song to the next one in the playlist.
+     4. **Previous Song**: Confirmed that clicking the "Previous" button navigates back to the previous song.
+     5. **Song Selection**: Validated that clicking a specific song in the playlist updates the currently playing song.
+   - **Bonus Test**: Added an extra test for the **speed toggle button**:
+     - Verified that the button cycles through playback speeds correctly (1x → 1.5x → 2x).
+
+5. **Followed Arrange-Act-Assert Pattern**  
+   - Structured tests for clarity and maintainability:
+     - **Arrange**: Render the `MusicPlayer` component.
+     - **Act**: Simulate user interactions (e.g., clicking buttons) with `fireEvent`.
+     - **Assert**: Verify the component's updated state using `expect`.
+
+6. **Ensured Independent Tests**  
+   - Utilized Vitest lifecycle hooks to:
+     - Reset the MSW handlers after each test (`afterEach`).
+     - Prevent tests from interfering with one another.
+
+---
+
+#### **How I Ran the Tests**
+
+1. **Run Tests**  
+   - Used the following command to execute all tests:
+     ```bash
+     npm run test
+     ```
+
+2. **Verify Output**  
+   - Confirmed all tests passed successfully, validating `MusicPlayer` functionality.
+
+---
+
+#### **Result**
+
+- **Test Coverage Expanded**: The `MusicPlayer` component's key functionalities were tested, ensuring it behaves as expected:
+  - First song defaults.
+  - Play/Pause toggling.
+  - Song navigation (Next/Previous).
+  - Song selection from the playlist.
+  - Playback speed toggling.
+- **Reusable Mock Setup**: API mocking with MSW and HTMLMediaElement stubs ensures a scalable testing setup for future tasks.
+- **Readable Tests**: The Arrange-Act-Assert pattern and inline comments make the tests easy to understand and maintain.
+
+---
+
+

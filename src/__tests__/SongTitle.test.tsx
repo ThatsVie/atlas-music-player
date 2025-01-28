@@ -1,9 +1,9 @@
-import { describe, it, expect } from "vitest";
+import { describe, test, expect } from "vitest"; 
 import { render } from "@testing-library/react";
 import SongTitle from "@/components/SongTitle";
 
 describe("SongTitle Component", () => {
-  it("matches snapshot with both title and artist", () => {
+  test("matches snapshot with both title and artist", () => {
     // Arrange
     const title = "Test Song";
     const artist = "Test Artist";
@@ -15,7 +15,7 @@ describe("SongTitle Component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with only title", () => {
+  test("matches snapshot with only title", () => {
     // Arrange
     const title = "Test Song";
 
@@ -26,7 +26,7 @@ describe("SongTitle Component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with only artist", () => {
+  test("matches snapshot with only artist", () => {
     // Arrange
     const artist = "Test Artist";
 
@@ -37,7 +37,7 @@ describe("SongTitle Component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with empty props", () => {
+  test("matches snapshot with empty props", () => {
     // Act
     const { container } = render(<SongTitle title="" artist="" />);
 

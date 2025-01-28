@@ -57,7 +57,7 @@ const MusicPlayer: React.FC = () => {
         <Playlist
           playlist={playlist}
           currentlyPlayingId={currentlyPlayingId}
-          playSong={playSong} // Pass centralized playback function
+          playSong={playSong}
         />
       </section>
     </div>

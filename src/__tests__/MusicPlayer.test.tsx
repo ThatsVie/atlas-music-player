@@ -1,28 +1,133 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import { server } from '@/mocks/server';
-import MusicPlayer from '@/components/MusicPlayer';
-import { http, HttpResponse } from 'msw';
+import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { beforeAll, test, expect, vi } from 'vitest';
+import MusicPlayer from '../components/MusicPlayer';
 
-server.use(
-  http.get('/api/v1/playlist', () => {
-    return HttpResponse.json([
-      { id: '1', title: 'Test Song 1', artist: 'Test Artist 1' },
-      { id: '2', title: 'Test Song 2', artist: 'Test Artist 2' },
-    ]);
-  })
-);
+beforeAll(() => {
+  Object.defineProperty(global.HTMLMediaElement.prototype, 'play', {
+    configurable: true,
+    writable: true,
+    value: vi.fn(() => Promise.resolve()),
+  });
 
-describe('MusicPlayer Component', () => {
-  it('renders playlist from mocked API', async () => {
-    render(<MusicPlayer />);
+  Object.defineProperty(global.HTMLMediaElement.prototype, 'pause', {
+    configurable: true,
+    writable: true,
+    value: vi.fn(),
+  });
 
-    await waitFor(() => {
-      expect(screen.getByText('Test Song 1')).toBeInTheDocument();
-      expect(screen.getByText('Test Artist 1')).toBeInTheDocument();
-    });
+  Object.defineProperty(global.HTMLMediaElement.prototype, 'volume', {
+    configurable: true,
+    get() {
+      return this._volume || 1;
+    },
+    set(value) {
+      this._volume = value;
+    },
+  });
 
-    expect(screen.getByText('Test Song 2')).toBeInTheDocument();
-    expect(screen.getByText('Test Artist 2')).toBeInTheDocument();
+  Object.defineProperty(global.HTMLMediaElement.prototype, 'playbackRate', {
+    configurable: true,
+    get() {
+      return this._playbackRate || 1;
+    },
+    set(value) {
+      this._playbackRate = value;
+    },
+  });
+});
+
+test('sets the first song as default when the API loads', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+
+  // Act & Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
+  });
+});
+
+test('toggles play/pause correctly', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+  const playButton = await screen.findByLabelText(/start playback/i);
+
+  // Act
+  fireEvent.click(playButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/pause playback/i)).toBeInTheDocument();
+  });
+
+  // Act
+  fireEvent.click(playButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/start playback/i)).toBeInTheDocument();
+  });
+});
+
+test('clicking Next moves to the next song', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+
+  // Act
+  const fastForwardButton = await screen.findByLabelText(/fast forward to the next song/i);
+  fireEvent.click(fastForwardButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 2/i)).toBeInTheDocument();
+  });
+});
+
+test('clicking Previous moves to the previous song', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+
+  // Act
+  const rewindButton = await screen.findByLabelText(/rewind to the previous song/i);
+  fireEvent.click(rewindButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
+  });
+});
+
+test('clicking a song in the playlist updates the currently playing song', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+
+  // Act
+  const songTwo = await screen.findByText(/mock song 2/i);
+  fireEvent.click(songTwo);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByText(/mock song 2/i)).toBeInTheDocument();
+  });
+});
+
+test('speed button toggles between settings correctly', async () => {
+  // Arrange
+  render(<MusicPlayer />);
+  const speedButton = await screen.findByLabelText(/playback speed is currently 1x/i);
+
+  // Act
+  fireEvent.click(speedButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/playback speed is currently 1.5x/i)).toBeInTheDocument();
+  });
+
+  // Act
+  fireEvent.click(speedButton);
+
+  // Assert
+  await waitFor(() => {
+    expect(screen.getByLabelText(/playback speed is currently 2x/i)).toBeInTheDocument();
   });
 });
