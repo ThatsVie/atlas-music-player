@@ -48,10 +48,6 @@ test('sets the first song as default when the API loads', async () => {
   await waitFor(() => {
     expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
   });
-
-  await waitFor(() => {
-    expect(screen.getByText(/mock song 1/i)).toBeInTheDocument();
-  });
 });
 
 
@@ -232,3 +228,4 @@ test('sets currentlyPlayingId to null when playlist is empty', async () => {
     expect(screen.queryByText(/mock song/i)).not.toBeInTheDocument();
   });
 });
+
