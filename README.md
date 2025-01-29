@@ -2,9 +2,10 @@
 
 # Vietify - Music Player: React Styling, Typescript Introduction, and React Unit Testing
 
+## 🌐 **[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
+
 ![RetroPug](https://github.com/user-attachments/assets/f0bf4b6b-560f-481a-bd3d-79f074557fd0)
 
-## 🌐 **[Deployed Application](https://atlas-music-player-vp.netlify.app/)**
 
 <table>
   <tr>
