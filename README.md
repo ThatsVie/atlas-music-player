@@ -1098,9 +1098,6 @@ Use the components from the previous task to build larger, composite components 
 1. **Ran Coverage Analysis in VS Code**  
    - Used the **Vitest VS Code plugin** to "Run Tests with Coverage."
    - This provided a visual breakdown of tested and untested lines within the **MusicPlayer** component and related files.
-   - **Key Note:** The **VS Code coverage report differs from the CLI coverage report** because:
-     - VS Code plugin uses an in-editor approach to display coverage.
-     - CLI report aggregates coverage across all test files and displays a summary.
    - **Screenshot**: Saved as `coverage-ui.png` in the project root.
 
 2. **Configured CLI Coverage Report**  
