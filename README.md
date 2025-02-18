@@ -1213,7 +1213,8 @@ Use the components from the previous task to build larger, composite components 
 
 This project reinforced the importance of breaking development into structured phases, making it easier to focus on design, functionality, and testing separately. I especially enjoyed the styling phase, where bringing the Figma design to life with Tailwind CSS was both creative and gratifying. Debugging test failures and ensuring realistic API mocking with MSW was challenging but ultimately made the tests more reliable. Automating workflows with GitHub Actions streamlined the testing process and provided confidence in the codebase. This project strengthened my skills in React, TypeScript, testing strategies, and CI/CD, all of which will be valuable in future work.
 
-With Love,
-[Vie P.](https://whatdoyouknowaboutlove.com/viepaula)  
+With love, 
+<br>
+**[Vie P.](https://whatdoyouknowaboutlove.com/viepaula/)** 
 
----
+
