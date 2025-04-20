@@ -1215,6 +1215,4 @@ This project reinforced the importance of breaking development into structured p
 
 With love, 
 <br>
-**[Vie P.](https://whatdoyouknowaboutlove.com/viepaula/)** 
-
-
+**[Vie P.](https://whatdoyouknowaboutlove.com/viep)** 
